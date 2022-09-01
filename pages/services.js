@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 
 import html5 from "../images/logos/html5.png";
@@ -11,6 +12,9 @@ import php from "../images/logos/php.png";
 export default function Services() {
     return (
         <div className="services">
+            <Head>
+                <title key="title">Web Design &amp; Development Services - Okay Plus</title>
+            </Head>
             <div id="rwd" className="service">
                 <div className="container">
                     <div className="row">

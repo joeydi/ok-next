@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Head from "next/head";
 
 import Clock from "../components/clock.js";
 import Testimonial from "../components/testimonial.js";
@@ -62,6 +63,9 @@ export default function Home() {
 
     return (
         <div className="home">
+            <Head>
+                <title key="title">Web Design &amp; Development from Burlington, VT - Okay Plus</title>
+            </Head>
             <div id="hero" className={`home ${heroActive ? "active" : ""}`}>
                 <div className="container">
                     <div className="row">

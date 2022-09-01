@@ -1,6 +1,11 @@
+import Head from "next/head";
+
 export default function Work() {
     return (
         <div className="work">
+            <Head>
+                <title key="title">Web Design &amp; Development Portfolio - Okay Plus</title>
+            </Head>
             <div id="hero">
                 <div className="container">
                     <div className="row">

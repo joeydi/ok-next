@@ -1,8 +1,13 @@
+import Head from "next/head";
+
 import headshot from "../images/headshot.jpg";
 
 export default function Contact() {
     return (
         <div className="contact">
+            <Head>
+                <title key="title">Contact Joe di Stefano at Okay Plus</title>
+            </Head>
             <div id="hero">
                 <div className="container">
                     <div className="row">
