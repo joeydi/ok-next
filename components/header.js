@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import logo from "../images/logo.svg";
 
 export default function Header() {
@@ -5,25 +7,29 @@ export default function Header() {
         <header>
             <div className="container">
                 <div className="row">
-                    <a id="logo" className="col-xs-6 col-sm-3" href="/">
-                        <img src={logo.src} alt="Okay Plus / Design &amp; Technology" />
-                    </a>
+                    <div className="col-xs-6 col-sm-3">
+                        <Link href="/">
+                            <a>
+                                <img src={logo.src} alt="Okay Plus / Design &amp; Technology" />
+                            </a>
+                        </Link>
+                    </div>
                     <a id="menu-trigger" className="col-xs-6 visible-xs">
                         <i className="icon-list"></i>
                     </a>
                     <nav className="col-xs-12 col-sm-9">
                         <ul id="menu">
                             <li>
-                                <a href="/services/">Services</a>
+                                <Link href="/services/">Services</Link>
                             </li>
                             <li>
-                                <a href="/work/">Work</a>
+                                <Link href="/work/">Work</Link>
                             </li>
                             {/* <li>
-                                <a href="/blog/">Blog</a>
+                                <Link href="/blog/">Blog</Link>
                             </li> */}
                             <li>
-                                <a href="/contact/">Contact</a>
+                                <Link href="/contact/">Contact</Link>
                             </li>
                         </ul>
                     </nav>

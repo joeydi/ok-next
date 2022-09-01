@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import html5 from "../images/logos/html5.png";
 import css3 from "../images/logos/css3.png";
 import wordpress from "../images/logos/wordpress.png";
@@ -14,7 +16,7 @@ export default function Services() {
                     <div className="row">
                         <div className="col-sm-8 col-md-7 col-lg-6">
                             <h1>Responsive Web Design</h1>
-                            <h2>Design and development that respond to users’ behavior and environment based on screen size, platform and orientation.</h2>
+                            <h2>Design and development that respond to users&rsquo; behavior and environment based on screen size, platform and orientation.</h2>
                             <p>Your audience is increasingly going mobile. Make sure you are putting your best foot forward in all situations.</p>
                             <ul>
                                 <li>
@@ -95,15 +97,19 @@ export default function Services() {
             <div id="cta">
                 <div className="container">
                     <h3>
-                        Think I've got what you need?
+                        Think I&rsquo;ve got what you need?
                         <br />
-                        <a className="btn" href="/work">
-                            View My Work <span className="glyphicon glyphicon-chevron-right"></span>
-                        </a>
+                        <Link href="/work" className="btn">
+                            <span>
+                                View My Work <span className="glyphicon glyphicon-chevron-right"></span>
+                            </span>
+                        </Link>
                         <span className="or">or</span>
-                        <a className="btn" href="/contact">
-                            Get In Touch <span className="glyphicon glyphicon-chevron-right"></span>
-                        </a>
+                        <Link className="btn" href="/contact">
+                            <span>
+                                Get In Touch <span className="glyphicon glyphicon-chevron-right"></span>
+                            </span>
+                        </Link>
                     </h3>
                 </div>
             </div>
