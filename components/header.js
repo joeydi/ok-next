@@ -1,8 +1,6 @@
 import logo from "../images/logo.svg";
 
 export default function Header() {
-    console.log(logo);
-
     return (
         <header>
             <div className="container">
