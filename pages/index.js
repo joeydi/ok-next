@@ -51,7 +51,7 @@ const testimonials = [
 export default function Home() {
     return (
         <div className="home">
-            <div id="hero" class="home">
+            <div id="hero" className="home">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-5">
@@ -79,11 +79,11 @@ export default function Home() {
                         {testimonials.map((testimonial, i) => {
                             return (
                                 <div className="testimonial" key={i}>
-                                    <header>
+                                    <cite>
                                         <img src={testimonial.photo.src} width="80" height="80" alt="" />
                                         <div className="name">{testimonial.name}</div>
                                         <div className="title">{testimonial.title}</div>
-                                    </header>
+                                    </cite>
                                     <blockquote>
                                         <p>{testimonial.testimonial}</p>
                                     </blockquote>

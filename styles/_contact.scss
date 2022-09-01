@@ -1,4 +1,4 @@
-.page-contact {
+.contact {
     #hero {
         text-align: center;
 
@@ -89,7 +89,8 @@
         text-align: left;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         margin: 0;
         padding: 100px 15px 15px;
         font-size: 18px;
@@ -124,7 +125,7 @@
         }
     }
 
-    footer a {
+    .footer a {
         display: block;
         padding: 15px;
         font-size: 14px;
@@ -146,7 +147,7 @@
 
 #map {
     padding: 50px 0;
-    background: url('../images/map.jpg') 50% 50% no-repeat;
+    background: url("../images/map.jpg") 50% 50% no-repeat;
     background-size: cover;
 
     @include respond-to(tablet) {
@@ -163,14 +164,13 @@
     top: 10px;
     left: 50%;
     margin-left: -45px;
-    background: url('../images/24-7.svg') 50% 50% no-repeat;
+    background: url("../images/24-7.svg") 50% 50% no-repeat;
 
     @include respond-to(tablet) {
         left: 10px;
         margin-left: 0;
     }
 }
-
 
 #map .card:before {
     content: " ";
@@ -181,7 +181,7 @@
     top: 13px;
     left: 50%;
     margin-left: -45px;
-    background: url('../images/stamp.svg') 50% 50% no-repeat;
+    background: url("../images/stamp.svg") 50% 50% no-repeat;
 
     @include respond-to(tablet) {
         top: 6px;
@@ -189,4 +189,3 @@
         margin-left: 0;
     }
 }
-
