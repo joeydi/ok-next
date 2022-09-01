@@ -1,3 +1,5 @@
+import Clock from "../components/clock.js";
+
 import phone from "../images/phone.png";
 import tony from "../images/testimonials/tony.jpg";
 import kathleen from "../images/testimonials/kathleen.jpg";
@@ -72,6 +74,7 @@ export default function Home() {
             </div>
 
             <div id="content">
+                <Clock />
                 <div className="container">
                     <h2>I partner with brands and agencies, bringing over 10 years of design and development experience to the table.</h2>
 
