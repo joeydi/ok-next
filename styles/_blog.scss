@@ -1,0 +1,279 @@
+#hero {
+    form {
+        margin-bottom: 1em;
+
+        @include respond-to(tablet) {
+            margin-bottom: 0;
+        }
+    }
+    input,
+    button {
+        border: none;
+        color: $red;
+        text-transform: uppercase;
+        font-weight: $bold;
+    }
+
+    .input-group-btn button {
+        border: 1px solid $white;
+    }
+
+    .btn-default {
+        color: $red;
+    }
+
+    .btn-group {
+        margin-right: 26px;
+    }
+
+    .dropdown-menu {
+        border: 2px solid $red;
+        background-color: $light-red;
+        box-shadow: none;
+
+        a {
+            color: $white;
+            text-transform: uppercase;
+            font-weight: $bold;
+
+            &:hover {
+                background-color: $red;
+            }
+        }
+    }
+}
+
+.post,
+.quote,
+.link {
+    position: relative;
+    margin-bottom: 40px;
+
+    @include respond-to(tablet) {
+        margin-bottom: 60px;
+    }
+
+    @include respond-to(desktop) {
+        margin-bottom: 100px;
+    }
+
+    p,
+    ol,
+    ul,
+    blockquote,
+    iframe {
+        margin-bottom: 1em;
+    }
+}
+
+.row:last-child {
+    .post,
+    .quote,
+    .link {
+        margin-bottom: 0;
+    }
+}
+
+.post {
+    background: lighten($light-grey, 2%);
+    border-radius: 3px;
+    overflow: hidden;
+
+    .post-image {
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .image-source {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 0.35em 1em;
+        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.75);
+        text-align: right;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: $medium;
+    }
+
+    .post-content,
+    .post-meta {
+        padding: 1em;
+
+        @include respond-to(tablet) {
+            padding: 1em 3em;
+        }
+
+        @include respond-to(desktop) {
+            padding: 1em 4em;
+        }
+    }
+
+    .post-content {
+        @include respond-to(desktop) {
+            padding: 2em 4em;
+        }
+    }
+
+    .post-meta {
+        clear: both;
+        background: darken($light-grey, 3%);
+
+        .date,
+        .tags {
+            display: inline-block;
+            margin-right: 2em;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: $bold;
+        }
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: $bold;
+        margin-bottom: 1em;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+.quote {
+    @include respond-to(tablet) {
+        padding: 0 3em;
+    }
+
+    @include respond-to(desktop) {
+        padding: 0 4em;
+    }
+
+    blockquote,
+    blockquote p {
+        padding: 0;
+        border: none;
+        font-weight: $medium;
+        font-style: italic;
+    }
+
+    .permalink:before {
+        content: "\e601";
+    }
+}
+
+.link {
+    @include respond-to(tablet) {
+        padding: 0 3em;
+    }
+
+    @include respond-to(desktop) {
+        padding: 0 4em;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin-bottom: 1em;
+    }
+
+    .permalink:before {
+        content: "\e602";
+    }
+}
+
+.permalink,
+.permalink:visited {
+    display: none;
+    width: 3em;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    color: $black;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        display: block;
+    }
+
+    @include respond-to(desktop) {
+        width: 4em;
+    }
+
+    &:before {
+        font-family: 'icons';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    span {
+        display: inline-block;
+        text-indent: 100%;
+    }
+}
+
+.alignright {
+    float: right;
+    margin-left: 1em;
+}
+
+.alignleft {
+    float: left;
+    margin-right: 1em;
+}
+
+#blog-pagination {
+    padding: 30px 0;
+    background: darken($light-grey, 5%);
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a.btn {
+        display: inline-block;
+        background: $white;
+        white-space: normal;
+        border-radius: 5px;
+        transition: all 0.25s;
+
+        &:hover {
+            background: $red;
+            color: $white;
+        }
+
+        span {
+            display: none;
+            transition: none !important;
+
+            @include respond-to(tablet) {
+                display: inline-block;
+            }
+        }
+    }
+
+    .next {
+        text-align: right;
+    }
+}
