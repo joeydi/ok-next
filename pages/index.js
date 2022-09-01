@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 import Clock from "../components/clock.js";
 import Testimonial from "../components/testimonial.js";
@@ -104,9 +105,11 @@ export default function Home() {
                     <h3>
                         Have a project in mind?
                         <br />
-                        <a className="btn" href="<?php echo home_url( '/services/' ); ?>">
-                            See My Services <span className="glyphicon glyphicon-chevron-right"></span>
-                        </a>
+                        <Link href="/services">
+                            <a className="btn">
+                                See My Services <span className="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </Link>
                     </h3>
                 </div>
             </div>

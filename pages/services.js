@@ -103,16 +103,16 @@ export default function Services() {
                     <h3>
                         Think I&rsquo;ve got what you need?
                         <br />
-                        <Link href="/work" className="btn">
-                            <span>
+                        <Link href="/work">
+                            <a className="btn">
                                 View My Work <span className="glyphicon glyphicon-chevron-right"></span>
-                            </span>
+                            </a>
                         </Link>
                         <span className="or">or</span>
-                        <Link className="btn" href="/contact">
-                            <span>
+                        <Link href="/contact">
+                            <a className="btn">
                                 Get In Touch <span className="glyphicon glyphicon-chevron-right"></span>
-                            </span>
+                            </a>
                         </Link>
                     </h3>
                 </div>

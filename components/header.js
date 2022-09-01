@@ -42,9 +42,6 @@ export default function Header() {
                                     Work
                                 </Link>
                             </li>
-                            {/* <li>
-                                <Link href="/blog/" onClick={hideNav} legacyBehavior={false}>Blog</Link>
-                            </li> */}
                             <li>
                                 <Link href="/contact/" onClick={hideNav} legacyBehavior={false}>
                                     Contact
