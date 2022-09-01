@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
+
 import Clock from "../components/clock.js";
+import Testimonial from "../components/testimonial.js";
 
 import phone from "../images/phone.png";
 import tony from "../images/testimonials/tony.jpg";
@@ -51,9 +54,15 @@ const testimonials = [
 ];
 
 export default function Home() {
+    const [heroActive, setHeroActive] = useState(false);
+
+    useEffect(() => {
+        setHeroActive(true);
+    }, []);
+
     return (
         <div className="home">
-            <div id="hero" className="home">
+            <div id="hero" className={`home ${heroActive ? "active" : ""}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-5">
@@ -80,18 +89,7 @@ export default function Home() {
 
                     <div className="testimonials">
                         {testimonials.map((testimonial, i) => {
-                            return (
-                                <div className="testimonial" key={i}>
-                                    <cite>
-                                        <img src={testimonial.photo.src} width="80" height="80" alt="" />
-                                        <div className="name">{testimonial.name}</div>
-                                        <div className="title">{testimonial.title}</div>
-                                    </cite>
-                                    <blockquote>
-                                        <p>{testimonial.testimonial}</p>
-                                    </blockquote>
-                                </div>
-                            );
+                            return <Testimonial testimonial={testimonial} key={i} />;
                         })}
                     </div>
                 </div>

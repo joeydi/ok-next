@@ -74,10 +74,26 @@
     }
 }
 
+.testimonials {
+    perspective: 10000px;
+}
+
 .testimonial {
     position: relative;
     z-index: 1;
     margin-bottom: 3em;
+    transition: all 1s;
+    transform: rotateX(10deg) rotateY(90deg);
+    transform-origin: 110% top;
+
+    &:nth-child(even) {
+        transform: rotateX(10deg) rotateY(-90deg);
+        transform-origin: -10% top;
+    }
+
+    &.active {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
 
     &:before {
         content: " ";
@@ -266,7 +282,7 @@
     }
 }
 
-html.js.csstransforms3d .home #hero {
+.home #hero {
     * {
         transform: translateX(40px);
         opacity: 0;
@@ -299,27 +315,6 @@ html.js.csstransforms3d .home #hero {
         * {
             transform: translateX(0) translateY(0) rotate(0);
             opacity: 1;
-        }
-    }
-}
-
-html.js.csstransforms3d {
-    .testimonials {
-        perspective: 10000px;
-    }
-
-    .testimonial {
-        transition: all 1s;
-        transform: rotateX(10deg) rotateY(90deg);
-        transform-origin: 110% top;
-
-        &:nth-child(even) {
-            transform: rotateX(10deg) rotateY(-90deg);
-            transform-origin: -10% top;
-        }
-
-        &.show {
-            transform: rotateX(0deg) rotateY(0deg);
         }
     }
 }
