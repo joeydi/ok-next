@@ -1,8 +1,19 @@
+import { useState } from "react";
 import Link from "next/link";
 
 import logo from "../images/logo.svg";
 
 export default function Header() {
+    const [navActive, setNavActive] = useState(false);
+
+    const toggleNav = () => {
+        setNavActive(!navActive);
+    };
+
+    const hideNav = () => {
+        setNavActive(false);
+    };
+
     return (
         <header>
             <div className="container">
@@ -14,22 +25,30 @@ export default function Header() {
                             </a>
                         </Link>
                     </div>
-                    <a id="menu-trigger" className="col-xs-6 visible-xs">
-                        <i className="icon-list"></i>
-                    </a>
-                    <nav className="col-xs-12 col-sm-9">
+                    <div className="col-xs-6 visible-xs">
+                        <button id="menu-trigger" onClick={toggleNav}>
+                            <i className="icon-list"></i>
+                        </button>
+                    </div>
+                    <nav className={`col-xs-12 col-sm-9 ${navActive ? "active" : ""}`}>
                         <ul id="menu">
                             <li>
-                                <Link href="/services/">Services</Link>
+                                <Link href="/services/" onClick={hideNav} legacyBehavior={false}>
+                                    Services
+                                </Link>
                             </li>
                             <li>
-                                <Link href="/work/">Work</Link>
+                                <Link href="/work/" onClick={hideNav} legacyBehavior={false}>
+                                    Work
+                                </Link>
                             </li>
                             {/* <li>
-                                <Link href="/blog/">Blog</Link>
+                                <Link href="/blog/" onClick={hideNav} legacyBehavior={false}>Blog</Link>
                             </li> */}
                             <li>
-                                <Link href="/contact/">Contact</Link>
+                                <Link href="/contact/" onClick={hideNav} legacyBehavior={false}>
+                                    Contact
+                                </Link>
                             </li>
                         </ul>
                     </nav>
