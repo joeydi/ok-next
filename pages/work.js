@@ -1,6 +1,11 @@
+import Link from "next/link";
 import Head from "next/head";
 
-export default function Work() {
+import { fetchAPI } from "../lib/api";
+
+export default function Work({ projects }) {
+    console.log(projects.data);
+
     return (
         <div className="work">
             <Head>
@@ -21,15 +26,40 @@ export default function Work() {
             <div id="content">
                 <div className="container">
                     <div className="row">
-                        <div className="col-sm-6 col-lg-4">
-                            <a href="<?php the_permalink(); ?>" className="project-excerpt">
-                                <img src="https://picsum.photos/640/448" alt="" />
-                                <h2>Project Name</h2>
-                            </a>
-                        </div>
+                        {projects.data.map((project, i) => {
+                            const featuredImage = project.attributes.featuredImage.data.attributes;
+
+                            return (
+                                <div className="col-sm-6 col-lg-4" key={i}>
+                                    <Link href={`/work/${project.attributes.slug}`}>
+                                        <a className="project-excerpt">
+                                            <img src={featuredImage.url} alt={featuredImage.alternativeText} />
+                                            <h2>{project.attributes.title}</h2>
+                                        </a>
+                                    </Link>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
         </div>
     );
+}
+
+export async function getServerSideProps() {
+    const projects = await fetchAPI("projects", {
+        fields: ["title", "slug"],
+        populate: {
+            featuredImage: {
+                fields: ["url"],
+            },
+        },
+    });
+
+    return {
+        props: {
+            projects,
+        },
+    };
 }

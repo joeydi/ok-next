@@ -4,7 +4,7 @@ body.post-type-archive-project #hero h1 {
     }
 }
 
-body.single-project #hero {
+.project #hero {
     a {
         color: $white;
     }
@@ -63,7 +63,7 @@ html.js.csstransforms .project-excerpt {
     }
 }
 
-body.single-project {
+.project {
     #content {
         @include respond-to(desktop) {
             padding-top: 60px;
@@ -235,12 +235,16 @@ html.js.csstransforms #project-pagination {
         }
     }
 
-    h3, strong, p {
+    h3,
+    strong,
+    p {
         transform: translateX(-100px);
     }
 
     .next {
-        h3, strong, p {
+        h3,
+        strong,
+        p {
             transform: translateX(100px);
         }
     }
@@ -251,7 +255,9 @@ html.js.csstransforms #project-pagination {
             transform: translateY(0);
         }
 
-        h3, strong, p {
+        h3,
+        strong,
+        p {
             transform: translateX(0);
         }
     }
