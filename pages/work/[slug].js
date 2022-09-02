@@ -42,19 +42,20 @@ const Project = ({ project }) => {
                 <div className="container">
                     <div className="project-heading row">
                         <div className="col-md-10">
-                            <ReactMarkdown children={project.attributes.description} />
+                            <ReactMarkdown>{project.attributes.description}</ReactMarkdown>
                         </div>
                     </div>
                     <div className="project-images row">
-                        {project.attributes.images.data.map((image, i) => {
-                            return (
-                                <div className="col-sm-6 col-lg-4">
-                                    <a href={image.attributes.url}>
-                                        <img src={image.attributes.url} alt="" />
-                                    </a>
-                                </div>
-                            );
-                        })}
+                        {project.attributes.images.data &&
+                            project.attributes.images.data.map((image, i) => {
+                                return (
+                                    <div className="col-sm-6 col-lg-4" key={i}>
+                                        <a href={image.attributes.url}>
+                                            <img src={image.attributes.url} alt="" />
+                                        </a>
+                                    </div>
+                                );
+                            })}
                     </div>
                 </div>
             </div>
