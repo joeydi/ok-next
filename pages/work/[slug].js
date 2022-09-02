@@ -1,14 +1,8 @@
-// import Moment from "react-moment";
 import ReactMarkdown from "react-markdown";
-
-// import Seo from "../../components/seo";
-// import Layout from "../../components/layout";
 
 import { fetchAPI } from "../../lib/api";
 
 const Project = ({ project }) => {
-    console.log(project);
-
     return (
         <div className="project">
             <div id="hero">
