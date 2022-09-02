@@ -27,7 +27,7 @@ export default function Work({ projects }) {
                 <div className="container">
                     <div className="row">
                         {projects.data.map((project, i) => {
-                            const featuredImage = project.attributes.featuredImage.data.attributes;
+                            const featuredImage = project.attributes.featuredImage.data?.attributes || "";
 
                             return (
                                 <div className="col-sm-6 col-lg-4" key={i}>
