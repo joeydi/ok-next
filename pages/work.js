@@ -4,8 +4,6 @@ import Head from "next/head";
 import { fetchAPI } from "../lib/api";
 
 export default function Work({ projects }) {
-    console.log(projects.data);
-
     return (
         <div className="work">
             <Head>
