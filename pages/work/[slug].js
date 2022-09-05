@@ -49,7 +49,7 @@ const Project = ({ project }) => {
                         {project.attributes.images.data &&
                             project.attributes.images.data.map((image, i) => {
                                 return (
-                                    <div className="col-sm-6 col-lg-4" key={i}>
+                                    <div className={`col-sm-6 ${project.attributes.images.data.length > 2 ? "col-lg-4" : ""}`} key={i}>
                                         <a href={image.attributes.url}>
                                             <img src={image.attributes.url} alt="" />
                                         </a>
