@@ -1,0 +1,88 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+video,
+svg,
+iframe,
+picture {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.lazyload,
+.lazyloading {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+.contain {
+    .lazyload,
+    .lazyloading {
+        transform: scale(1);
+    }
+}
+
+.lazyloaded {
+    opacity: 1;
+}
+
+picture img {
+    transition: opacity 0.25s, transform 0.5s ease-out;
+}
+
+// Media Aspect Ratios
+[class*="aspect"] {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background-color: $light-grey;
+    transform: scale(1);
+
+    // Slightly overflow "covered" images to prevent flickering around edges
+    > img,
+    > video {
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        max-width: none;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        object-fit: cover;
+    }
+
+    // Don't overflow "contained" images, to prevent clipping logos, etc.
+    &.contain {
+        > img,
+        > video {
+            @include fill;
+            object-fit: contain;
+        }
+    }
+}
+
+.aspect-square {
+    padding-top: aspect(1920, 1920);
+}
+
+.aspect-block {
+    padding-top: aspect(1920, 1540);
+}
+
+.aspect-landscape {
+    padding-top: aspect(1920, 1280);
+}
+
+.aspect-widescreen {
+    padding-top: aspect(1920, 1080);
+}
+
+.aspect-hero {
+    padding-top: aspect(1920, 480);
+}
+
+.aspect-hero-sm {
+    padding-top: aspect(1920, 360);
+}

@@ -1,18 +1,10 @@
-import { useRef, useEffect } from "react";
+import dynamic from "next/dynamic";
 import ReactMarkdown from "react-markdown";
-// import Macy from "macy";
-
 import { fetchAPI } from "../../lib/api";
 
+const ProjectImages = dynamic(() => import("../../components/project-images"), { ssr: false });
+
 const Project = ({ project }) => {
-    const projectImages = useRef();
-
-    useEffect(() => {
-        // var macy = Macy({
-        //     container: ".project-images",
-        // });
-    }, []);
-
     return (
         <div className="project">
             <div id="hero">
@@ -55,18 +47,7 @@ const Project = ({ project }) => {
                             <ReactMarkdown>{project.attributes.description}</ReactMarkdown>
                         </div>
                     </div>
-                    <div className="project-images row" ref={projectImages}>
-                        {project.attributes.images.data &&
-                            project.attributes.images.data.map((image, i) => {
-                                return (
-                                    <div className={`col-sm-6 ${project.attributes.images.data.length > 2 ? "col-lg-4" : ""}`} key={i}>
-                                        <a href={image.attributes.url}>
-                                            <img src={image.attributes.url} alt="" />
-                                        </a>
-                                    </div>
-                                );
-                            })}
-                    </div>
+                    <ProjectImages images={project.attributes.images.data} />
                 </div>
             </div>
 

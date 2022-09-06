@@ -92,15 +92,10 @@ html.js.csstransforms .project-excerpt {
     }
 }
 
-.project-images {
-    img {
-        display: block;
-        margin-bottom: 2em;
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
-    }
-}
-
-html.js.csstransforms .project-images img {
+.project-images a {
+    display: block;
+    margin-bottom: 2em;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
     transition: all 0.25s;
 
     &:hover {
