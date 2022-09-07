@@ -21,6 +21,9 @@ let speed = 0.125,
 
 const Network = function () {
     this.init = function (canvas) {
+        nodes = [];
+        edges = [];
+
         Paper.setup(canvas);
 
         edgeLayer = new Paper.Layer();
@@ -210,10 +213,6 @@ export default function NetworkPage() {
     useEffect(() => {
         network = new Network();
         network.init(canvasRef.current);
-
-        // return () => {
-        //     paper.remove();
-        // };
     }, []);
 
     return (
