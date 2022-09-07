@@ -1,7 +1,7 @@
 #network {
     position: relative;
     background: $red;
-    height: 600px;
+    min-height: calc(100vh - 83px);
 
     .overlay {
         position: absolute;
@@ -19,6 +19,14 @@
         border: none;
         color: $white;
         font-size: 36px;
+    }
 
+    canvas {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    @include respond-to(tablet) {
+        min-height: calc(100vh - 102px);
     }
 }
