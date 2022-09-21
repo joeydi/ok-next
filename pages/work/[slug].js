@@ -1,6 +1,9 @@
 import dynamic from "next/dynamic";
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 import { fetchAPI } from "../../lib/api";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
+import { getProjectPaths, getProject } from "../../lib/work";
 
 const ProjectImages = dynamic(() => import("../../components/project-images"), { ssr: false });
 
@@ -11,28 +14,28 @@ const Project = ({ project }) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-9">
-                            <h1>{project.attributes.title}</h1>
+                            <h1>{project.frontmatter.title}</h1>
 
                             <div className="project-meta">
-                                {project.attributes.role && (
+                                {project.frontmatter.role && (
                                     <p>
                                         <span className="glyphicon glyphicon-user"></span>&nbsp;
                                         <strong>Role: </strong>
-                                        {project.attributes.role}
+                                        {project.frontmatter.role}
                                     </p>
                                 )}
 
-                                {project.attributes.client && (
+                                {project.frontmatter.client && (
                                     <p>
                                         <span className="glyphicon glyphicon-briefcase"></span>&nbsp;
                                         <strong>Agency: </strong>
-                                        {project.attributes.client}
+                                        {project.frontmatter.client}
                                     </p>
                                 )}
                             </div>
                         </div>
                         <div className="col-sm-3">
-                            <a href={project.attributes.url} className="btn">
+                            <a className="btn" href={project.frontmatter.url} target="_blank" rel="noopener nofollow">
                                 View Website <span className="glyphicon glyphicon-chevron-right"></span>
                             </a>
                         </div>
@@ -44,10 +47,10 @@ const Project = ({ project }) => {
                 <div className="container">
                     <div className="project-heading row">
                         <div className="col-md-10">
-                            <ReactMarkdown>{project.attributes.description}</ReactMarkdown>
+                            <MDXRemote {...project} />
                         </div>
                     </div>
-                    <ProjectImages images={project.attributes.images.data} />
+                    <ProjectImages images={project.frontmatter.images} />
                 </div>
             </div>
 
@@ -88,30 +91,19 @@ const Project = ({ project }) => {
 };
 
 export async function getStaticPaths() {
-    const projects = await fetchAPI("projects", { fields: ["slug"] });
+    const paths = getProjectPaths();
 
     return {
-        paths: projects.data.map((project) => ({
-            params: {
-                slug: project.attributes.slug,
-            },
-        })),
+        paths,
         fallback: false,
     };
 }
 
 export async function getStaticProps({ params }) {
-    const projects = await fetchAPI("projects", {
-        filters: {
-            slug: params.slug,
-        },
-        populate: ["featuredImage", "images"],
-    });
+    const source = getProject(params.slug);
+    const project = await serialize(source, { parseFrontmatter: true });
 
-    return {
-        props: { project: projects.data[0] },
-        revalidate: 60,
-    };
+    return { props: { project } };
 }
 
 export default Project;
