@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 
 import { getProjects } from "../lib/work";
 
@@ -29,11 +30,13 @@ export default function Work({ projects }) {
                         {projects.map((project, i) => {
                             const featuredImage = project.frontmatter.featuredImage || "";
 
+                            console.log(featuredImage);
+
                             return (
                                 <div className="col-sm-6 col-lg-4" key={i}>
-                                    <Link href={`/work/${project.frontmatter.slug}`}>
+                                    <Link href={`/work/${project.slug}`}>
                                         <a className="project-excerpt">
-                                            <img src={featuredImage.url} alt={featuredImage.alternativeText} />
+                                            <Image src={featuredImage.src} alt={featuredImage.alt} width={featuredImage.width} height={featuredImage.height} layout="responsive" sizes="33vw, (max-width: 767px) 50vw, (max-width: 1199px) 100vw" />
                                             <h2>{project.frontmatter.title}</h2>
                                         </a>
                                     </Link>

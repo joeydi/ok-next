@@ -13,6 +13,7 @@
 @import "bootstrap/scss/badge";
 @import "bootstrap/scss/dropdown";
 
+@import "typography";
 @import "icons";
 @import "home";
 @import "services";
@@ -312,43 +313,4 @@ img {
 
 iframe {
     margin: 0 auto 1em !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-    font-family: "effra", sans-serif;
-
-    &:first-child {
-        margin-top: 0;
-    }
-}
-
-a,
-a:visited {
-    color: $red;
-}
-
-a:hover {
-    color: darken($red, 10%);
-}
-
-.btn {
-    text-transform: uppercase;
-    font-weight: $bold;
-    letter-spacing: 1px;
-}
-
-hr {
-    width: 50%;
-    border-top: 4px solid darken($light-grey, 3%);
 }
