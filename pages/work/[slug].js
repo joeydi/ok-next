@@ -33,7 +33,7 @@ const Project = ({ project }) => {
                             </div>
                         </div>
                         <div className="col-md-3">
-                            <a className="btn" href={project.frontmatter.url} target="_blank" rel="noopener nofollow">
+                            <a className="btn" href={project.frontmatter.url} target="_blank" rel="noopener noreferrer">
                                 View Website <span className="glyphicon glyphicon-chevron-right"></span>
                             </a>
                         </div>
