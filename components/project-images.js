@@ -1,24 +1,22 @@
 import { useRef, useEffect } from "react";
+import Image from "next/image";
 import Masonry from "masonry-layout";
 
 export default function ProjectImages({ images }) {
     const projectImages = useRef();
 
     useEffect(() => {
-        var msnry = new Masonry(projectImages.current);
+        new Masonry(projectImages.current);
     }, []);
 
     return (
         <div className="project-images row" ref={projectImages}>
             {images &&
                 images.map((image, i) => {
-                    console.log(image);
                     return (
-                        <div className={`col-sm-6 ${images.length > 2 ? "col-lg-4" : ""}`} key={i}>
-                            <a href={image.attributes.url}>
-                                <picture className="aspect" style={{ paddingTop: `${(image.attributes.height / image.attributes.width) * 100}%` }}>
-                                    <img src={image.attributes.url} alt="" />
-                                </picture>
+                        <div className={`col-12 col-sm-6 ${images.length > 2 ? "col-lg-4" : ""}`} key={i}>
+                            <a href={image.src}>
+                                <Image src={image.src} alt={image.alt} width={image.width} height={image.height} layout="responsive" sizes="33vw, (max-width: 767px) 50vw, (max-width: 1199px) 100vw" />
                             </a>
                         </div>
                     );
