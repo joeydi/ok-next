@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Head from "next/head";
 
-import { fetchAPI } from "../lib/api";
+import { getProjects } from "../lib/work";
 
 export default function Work({ projects }) {
+    console.log("projects", projects);
+
     return (
         <div className="work">
             <Head>
@@ -24,15 +26,15 @@ export default function Work({ projects }) {
             <div id="content">
                 <div className="container">
                     <div className="row">
-                        {projects.data.map((project, i) => {
-                            const featuredImage = project.attributes.featuredImage.data?.attributes || "";
+                        {projects.map((project, i) => {
+                            const featuredImage = project.frontmatter.featuredImage || "";
 
                             return (
                                 <div className="col-sm-6 col-lg-4" key={i}>
-                                    <Link href={`/work/${project.attributes.slug}`}>
+                                    <Link href={`/work/${project.frontmatter.slug}`}>
                                         <a className="project-excerpt">
                                             <img src={featuredImage.url} alt={featuredImage.alternativeText} />
-                                            <h2>{project.attributes.title}</h2>
+                                            <h2>{project.frontmatter.title}</h2>
                                         </a>
                                     </Link>
                                 </div>
@@ -45,15 +47,8 @@ export default function Work({ projects }) {
     );
 }
 
-export async function getServerSideProps() {
-    const projects = await fetchAPI("projects", {
-        fields: ["title", "slug"],
-        populate: {
-            featuredImage: {
-                fields: ["url"],
-            },
-        },
-    });
+export async function getStaticProps() {
+    let projects = await getProjects();
 
     return {
         props: {
