@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/main.scss";
 
 import Head from "next/head";

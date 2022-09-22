@@ -1,6 +1,4 @@
 import dynamic from "next/dynamic";
-// import ReactMarkdown from "react-markdown";
-import { fetchAPI } from "../../lib/api";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { getProjectPaths, getProject } from "../../lib/work";
@@ -13,7 +11,7 @@ const Project = ({ project }) => {
             <div id="hero">
                 <div className="container">
                     <div className="row">
-                        <div className="col-sm-9">
+                        <div className="col-md-9">
                             <h1>{project.frontmatter.title}</h1>
 
                             <div className="project-meta">
@@ -34,7 +32,7 @@ const Project = ({ project }) => {
                                 )}
                             </div>
                         </div>
-                        <div className="col-sm-3">
+                        <div className="col-md-3">
                             <a className="btn" href={project.frontmatter.url} target="_blank" rel="noopener nofollow">
                                 View Website <span className="glyphicon glyphicon-chevron-right"></span>
                             </a>
@@ -46,7 +44,7 @@ const Project = ({ project }) => {
             <div id="content">
                 <div className="container">
                     <div className="project-heading row">
-                        <div className="col-md-10">
+                        <div className="col-lg-10">
                             <MDXRemote {...project} />
                         </div>
                     </div>

@@ -18,7 +18,7 @@ export default function Services() {
             <div id="rwd" className="service">
                 <div className="container">
                     <div className="row">
-                        <div className="col-sm-8 col-md-7 col-lg-6">
+                        <div className="col-md-8 col-lg-7 col-xl-6">
                             <h1>Responsive Web Design</h1>
                             <h2>Design and development that respond to users&rsquo; behavior and environment based on screen size, platform and orientation.</h2>
                             <p>Your audience is increasingly going mobile. Make sure you are putting your best foot forward in all situations.</p>
@@ -47,8 +47,8 @@ export default function Services() {
 
             <div id="cms" className="service">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-sm-6 col-sm-offset-6 col-md-5 col-md-offset-7">
+                    <div className="row justify-content-end">
+                        <div className="col-md-5 ps-4 ps-lg-0">
                             <h1>Content Management Systems</h1>
                             <h2>Custom interfaces for managing everything from marketing websites to editorial content and geodata. All built on battle-tested, open-source software.</h2>
                             <p>We build themes and plugins with extensibility and maintainabilty in mind, ensuring that your project will be flexible and powerful enough serve your business well into the future.</p>
@@ -72,7 +72,7 @@ export default function Services() {
             <div id="app" className="service">
                 <div className="container">
                     <div className="row">
-                        <div className="col-sm-6">
+                        <div className="col-md-7 col-lg-6">
                             <h1>Web Application Development &amp; APIs</h1>
                             <h2>Need something custom? Building a product or starting an online business?</h2>
                             <p>From location-based search APIs to web-based tools for data management and anaylsis, I have experience building software solutions for startups, publicly-traded companies, and government agencies alike.</p>

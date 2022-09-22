@@ -18,19 +18,19 @@ export default function Header() {
         <header>
             <div className="container">
                 <div className="row">
-                    <div className="col-xs-6 col-sm-3">
+                    <div className="col-6 col-md-3">
                         <Link href="/">
                             <a>
                                 <img src={logo.src} alt="Okay Plus / Design &amp; Technology" />
                             </a>
                         </Link>
                     </div>
-                    <div className="col-xs-6 visible-xs">
+                    <div className="col-6 d-md-none">
                         <button id="menu-trigger" onClick={toggleNav}>
                             <i className="icon-list"></i>
                         </button>
                     </div>
-                    <nav className={`col-xs-12 col-sm-9 ${navActive ? "active" : ""}`}>
+                    <nav className={`col-12 col-md-9 ${navActive ? "active" : ""}`}>
                         <ul id="menu">
                             <li>
                                 <Link href="/services/" onClick={hideNav} legacyBehavior={false}>
