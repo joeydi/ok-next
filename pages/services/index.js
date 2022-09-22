@@ -1,13 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
 
-import html5 from "../images/logos/html5.png";
-import css3 from "../images/logos/css3.png";
-import wordpress from "../images/logos/wordpress.png";
-import drupal from "../images/logos/drupal.png";
-import python from "../images/logos/python.png";
-import django from "../images/logos/django.png";
-import php from "../images/logos/php.png";
+import html5 from "@/images/logos/html5.png";
+import css3 from "@/images/logos/css3.png";
+import wordpress from "@/images/logos/wordpress.png";
+import drupal from "@/images/logos/drupal.png";
+import python from "@/images/logos/python.png";
+import django from "@/images/logos/django.png";
+import php from "@/images/logos/php.png";
 
 export default function Services() {
     return (

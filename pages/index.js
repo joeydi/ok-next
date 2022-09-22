@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-import Clock from "../components/clock.js";
-import Testimonial from "../components/testimonial.js";
+import Clock from "@/components/clock.js";
+import Testimonial from "@/components/testimonial.js";
 
-import phone from "../images/phone.png";
-import tony from "../images/testimonials/tony.jpg";
-import kathleen from "../images/testimonials/kathleen.jpg";
-import jeremy from "../images/testimonials/jeremy.jpg";
-import tom from "../images/testimonials/tom.jpg";
-import doron from "../images/testimonials/doron.jpg";
+import phone from "@/images/phone.png";
+import tony from "@/images/testimonials/tony.jpg";
+import kathleen from "@/images/testimonials/kathleen.jpg";
+import jeremy from "@/images/testimonials/jeremy.jpg";
+import tom from "@/images/testimonials/tom.jpg";
+import doron from "@/images/testimonials/doron.jpg";
 
 const testimonials = [
     {

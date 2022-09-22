@@ -2,11 +2,9 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 
-import { getProjects } from "../lib/work";
+import { getProjects } from "@/lib/work";
 
 export default function Work({ projects }) {
-    console.log("projects", projects);
-
     return (
         <div className="work">
             <Head>
@@ -29,8 +27,6 @@ export default function Work({ projects }) {
                     <div className="row">
                         {projects.map((project, i) => {
                             const featuredImage = project.frontmatter.featuredImage || "";
-
-                            console.log(featuredImage);
 
                             return (
                                 <div className="col-sm-6 col-lg-4" key={i}>

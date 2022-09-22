@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import { getProjectPaths, getProject } from "../../lib/work";
+import { getProjectPaths, getProject } from "@/lib/work";
 
-const ProjectImages = dynamic(() => import("../../components/project-images"), { ssr: false });
+const ProjectImages = dynamic(() => import("@/components/project-images"), { ssr: false });
 
 const Project = ({ project }) => {
     return (

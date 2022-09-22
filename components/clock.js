@@ -1,8 +1,8 @@
 import { useRef, useEffect } from "react";
 
-import clockOutline from "../images/clock-outline.svg";
-import clockMinuteHand from "../images/clock-minute-hand.svg";
-import clockHourHand from "../images/clock-hour-hand.svg";
+import clockOutline from "@/images/clock-outline.svg";
+import clockMinuteHand from "@/images/clock-minute-hand.svg";
+import clockHourHand from "@/images/clock-hour-hand.svg";
 
 export default function Clock() {
     const clockMinuteHandRef = useRef(null);

@@ -1,8 +1,8 @@
-import "../styles/main.scss";
+import "@/styles/main.scss";
 
 import Head from "next/head";
-import Layout from "../components/layout";
-import favicon from "../images/favicon.png";
+import Layout from "@/components/layout";
+import favicon from "@/images/favicon.png";
 
 export default function MyApp({ Component, pageProps }) {
     return (

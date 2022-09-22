@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import logo from "../images/logo.svg";
+import logo from "@/images/logo.svg";
 
 export default function Header() {
     const [navActive, setNavActive] = useState(false);

@@ -1,4 +1,4 @@
-import { fetchAPI } from "../lib/api";
+import { fetchAPI } from "@/lib/api";
 
 export default function Post({ post }) {
     return <h1>This is a blog post: {post.attributes.title}</h1>;

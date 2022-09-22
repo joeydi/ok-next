@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import headshot from "../images/headshot.jpg";
+import headshot from "@/images/headshot.jpg";
 
 export default function Contact() {
     return (
