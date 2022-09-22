@@ -3,9 +3,13 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { getProjectPaths, getProject } from "@/lib/work";
 
+import chevronRight from "@/icons/chevron-right.svg";
+
 const ProjectImages = dynamic(() => import("@/components/project-images"), { ssr: false });
 
 const Project = ({ project }) => {
+    console.log(chevronRight);
+
     return (
         <div className="project">
             <div id="hero">
@@ -35,7 +39,10 @@ const Project = ({ project }) => {
                         {project.frontmatter.url && (
                             <div className="col-md-3">
                                 <a className="btn" href={project.frontmatter.url} target="_blank" rel="noopener noreferrer">
-                                    View Website <span className="glyphicon glyphicon-chevron-right"></span>
+                                    View Website
+                                    <svg viewBox={chevronRight.viewBox}>
+                                        <use xlinkHref={chevronRight.id} />
+                                    </svg>
                                 </a>
                             </div>
                         )}
