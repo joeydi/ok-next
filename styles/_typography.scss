@@ -28,6 +28,8 @@ a:hover {
 }
 
 .btn {
+    display: inline-flex;
+    align-items: center;
     text-transform: uppercase;
     font-weight: $bold;
     letter-spacing: 1px;
@@ -36,4 +38,11 @@ a:hover {
 hr {
     width: 50%;
     border-top: 4px solid darken($light-grey, 3%);
+}
+
+svg.icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    overflow: visible;
 }

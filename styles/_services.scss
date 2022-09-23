@@ -7,12 +7,13 @@
         text-align: center;
     }
 
-    a, a:visited, a:hover {
+    a,
+    a:visited,
+    a:hover {
         color: $red;
     }
 
     a.btn {
-        display: inline-block;
         margin: 0.5em;
         background: $white;
         border-radius: 5px;
@@ -84,7 +85,7 @@
     background: #ededee;
 
     @include respond-to(tablet) {
-        background: #ededee url('../images/service-rwd.jpg') 50% 50% no-repeat;
+        background: #ededee url("../images/service-rwd.jpg") 50% 50% no-repeat;
     }
 }
 
@@ -92,14 +93,13 @@
     background: $white;
 
     @include respond-to(tablet) {
-        background: $white url('../images/service-cms.jpg') 50% 0 no-repeat;
+        background: $white url("../images/service-cms.jpg") 50% 0 no-repeat;
         background-size: cover;
 
         .col-sm-6 {
             padding-left: 80px;
         }
     }
-
 
     @include respond-to(desktop) {
         .col-sm-6 {
@@ -112,7 +112,7 @@
     background: #ededee;
 
     @include respond-to(tablet) {
-        background: #ededee url('../images/service-app.jpg') 25% 50% no-repeat;
+        background: #ededee url("../images/service-app.jpg") 25% 50% no-repeat;
         background-size: cover;
     }
 

@@ -1,15 +1,27 @@
-const withSvgSprites = require("next-svg-sprites");
-
 /** @type {import('next').NextConfig} */
-const nextConfig = withSvgSprites(
-    {
-        reactStrictMode: true,
-        swcMinify: true,
-        images: {
-            domains: ["simple-creature-website-assets.s3.amazonaws.com"],
-        },
+const nextConfig = {
+    reactStrictMode: true,
+    swcMinify: true,
+    images: {
+        domains: ["simple-creature-website-assets.s3.amazonaws.com"],
     },
-    {}
-);
+    webpack(config) {
+        config.module.rules.push({
+            test: /\.svg$/i,
+            issuer: /\.[jt]sx?$/,
+            resource: { not: /icons/ },
+            use: [{ loader: "@svgr/webpack", options: { icon: false } }],
+        });
+
+        config.module.rules.push({
+            test: /\.svg$/i,
+            issuer: /\.[jt]sx?$/,
+            resource: /icons/,
+            use: [{ loader: "@svgr/webpack", options: { icon: true } }],
+        });
+
+        return config;
+    },
+};
 
 module.exports = nextConfig;

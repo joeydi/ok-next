@@ -3,13 +3,13 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { getProjectPaths, getProject } from "@/lib/work";
 
-import chevronRight from "@/icons/chevron-right.svg";
+import User from "@/icons/user.svg";
+import Briefcase from "@/icons/briefcase.svg";
+import ChevronRight from "@/icons/chevron-right.svg";
 
 const ProjectImages = dynamic(() => import("@/components/project-images"), { ssr: false });
 
 const Project = ({ project }) => {
-    console.log(chevronRight);
-
     return (
         <div className="project">
             <div id="hero">
@@ -21,16 +21,16 @@ const Project = ({ project }) => {
                             <div className="project-meta">
                                 {project.frontmatter.role && (
                                     <p>
-                                        <span className="glyphicon glyphicon-user"></span>&nbsp;
-                                        <strong>Role: </strong>
+                                        <User className="icon me-10" />
+                                        <strong>Role:</strong>&nbsp;
                                         {project.frontmatter.role}
                                     </p>
                                 )}
 
                                 {project.frontmatter.client && (
                                     <p>
-                                        <span className="glyphicon glyphicon-briefcase"></span>&nbsp;
-                                        <strong>Agency: </strong>
+                                        <Briefcase className="icon me-10" />
+                                        <strong>Agency:</strong>&nbsp;
                                         {project.frontmatter.client}
                                     </p>
                                 )}
@@ -40,9 +40,7 @@ const Project = ({ project }) => {
                             <div className="col-md-3">
                                 <a className="btn" href={project.frontmatter.url} target="_blank" rel="noopener noreferrer">
                                     View Website
-                                    <svg viewBox={chevronRight.viewBox}>
-                                        <use xlinkHref={chevronRight.id} />
-                                    </svg>
+                                    <ChevronRight className="icon ms-10" />
                                 </a>
                             </div>
                         )}

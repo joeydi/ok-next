@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import logo from "@/images/logo.svg";
+import Logo from "@/images/logo.svg";
 
 export default function Header() {
     const [navActive, setNavActive] = useState(false);
@@ -21,7 +21,7 @@ export default function Header() {
                     <div className="col-6 col-md-3">
                         <Link href="/">
                             <a>
-                                <img src={logo.src} alt="Okay Plus / Design &amp; Technology" />
+                                <Logo />
                             </a>
                         </Link>
                     </div>

@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
+import ChevronRight from "@/icons/chevron-right.svg";
+
 import Clock from "@/components/clock.js";
 import Testimonial from "@/components/testimonial.js";
 
@@ -74,10 +76,12 @@ export default function Home() {
                             <h1>Okay Plus is the web design studio of Joe di Stefano</h1>
                             <p>Critical thinking, clean code and responsive design. These are the tools I use to bring digital experiences to life online.</p>
                             <a className="btn" href="<?php echo home_url( '/work/' ); ?>">
-                                View My Work <span className="glyphicon glyphicon-chevron-right"></span>
+                                View My Work
+                                <ChevronRight className="icon ms-10" />
                             </a>
                             <a className="btn" href="<?php echo home_url( '/contact/' ); ?>">
-                                Get In Touch <span className="glyphicon glyphicon-chevron-right"></span>
+                                Get In Touch
+                                <ChevronRight className="icon ms-10" />
                             </a>
                         </div>
                         <div className="col-md-7">
@@ -107,7 +111,8 @@ export default function Home() {
                         <br />
                         <Link href="/services">
                             <a className="btn">
-                                See My Services <span className="glyphicon glyphicon-chevron-right"></span>
+                                See My Services
+                                <ChevronRight className="icon ms-10" />
                             </a>
                         </Link>
                     </h3>

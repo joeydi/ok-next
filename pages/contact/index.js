@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import headshot from "@/images/headshot.jpg";
+import Save from "@/icons/save.svg";
 
 export default function Contact() {
     return (
@@ -28,7 +29,7 @@ export default function Contact() {
                                 </p>
                                 <div className="footer">
                                     <a href="<?php the_field( 'vcard', 'options' ); ?>">
-                                        <span className="glyphicon glyphicon-save"></span> Download vCard
+                                        <Save className="icon me-10" /> Download vCard
                                     </a>
                                 </div>
                             </div>
@@ -65,19 +66,19 @@ export default function Contact() {
                         </div>
                         <div className="col-md-6 col-lg-5 offset-lg-1">
                             <form role="form" method="post" action="">
-                                <div className="form-group mb-3">
+                                <div className="form-group mb-15">
                                     <label htmlFor="fullname">Your Name</label>
                                     <input type="text" className="form-control" id="fullname" name="fullname" />
                                 </div>
-                                <div className="form-group mb-3">
+                                <div className="form-group mb-15">
                                     <label htmlFor="email">Your Email</label>
                                     <input type="email" className="form-control" id="email" name="email" />
                                 </div>
-                                <div className="form-group mb-3">
+                                <div className="form-group mb-15">
                                     <label htmlFor="message">Your Message</label>
                                     <textarea className="form-control" id="message" name="message" rows="5"></textarea>
                                 </div>
-                                <div className="form-group mb-3">
+                                <div className="form-group mb-15">
                                     <button type="submit" className="btn btn-default">
                                         Submit
                                     </button>

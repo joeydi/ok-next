@@ -13,17 +13,16 @@
         "masonry-layout": "^4.2.2",
         "next": "12.2.5",
         "next-mdx-remote": "^4.1.0",
-        "next-svg-sprites": "^0.0.2",
         "paper": "^0.12.15",
         "qs": "^6.11.0",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-intersection-observer": "^9.4.0",
         "react-markdown": "^8.0.3",
-        "sass": "^1.54.8",
-        "svg-sprite-loader": "^6.0.11"
+        "sass": "^1.54.8"
     },
     "devDependencies": {
+        "@svgr/webpack": "^6.3.1",
         "eslint": "8.23.0",
         "eslint-config-next": "12.2.5",
         "image-size": "^1.0.2",

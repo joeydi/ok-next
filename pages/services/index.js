@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 
+import ChevronRight from "@/icons/chevron-right.svg";
+
 import html5 from "@/images/logos/html5.png";
 import css3 from "@/images/logos/css3.png";
 import wordpress from "@/images/logos/wordpress.png";
@@ -105,13 +107,15 @@ export default function Services() {
                         <br />
                         <Link href="/work">
                             <a className="btn">
-                                View My Work <span className="glyphicon glyphicon-chevron-right"></span>
+                                View My Work
+                                <ChevronRight className="icon ms-10" />
                             </a>
                         </Link>
                         <span className="or">or</span>
                         <Link href="/contact">
                             <a className="btn">
-                                Get In Touch <span className="glyphicon glyphicon-chevron-right"></span>
+                                Get In Touch
+                                <ChevronRight className="icon ms-10" />
                             </a>
                         </Link>
                     </h3>

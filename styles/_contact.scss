@@ -126,7 +126,8 @@
     }
 
     .footer a {
-        display: block;
+        display: flex;
+        align-items: center;
         padding: 15px;
         font-size: 14px;
         font-weight: $bold;
