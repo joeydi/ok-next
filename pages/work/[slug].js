@@ -1,7 +1,9 @@
 import dynamic from "next/dynamic";
-import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import { getProjectPaths, getProject } from "@/lib/work";
+import Link from "next/link";
+import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import { getProjectPaths, getProjectData } from "@/lib/work";
 
 import User from "@/icons/user.svg";
 import Briefcase from "@/icons/briefcase.svg";
@@ -9,7 +11,9 @@ import ChevronRight from "@/icons/chevron-right.svg";
 
 const ProjectImages = dynamic(() => import("@/components/project-images"), { ssr: false });
 
-const Project = ({ project }) => {
+const Project = ({ project, next, previous }) => {
+    const { ref, inView } = useInView();
+
     return (
         <div className="project">
             <div id="hero">
@@ -59,38 +63,40 @@ const Project = ({ project }) => {
                 </div>
             </div>
 
-            {/* <div id="project-pagination">
-    <div className="container">
-        <div className="row">
-            <div className="previous col-xs-6">
-                <?php if ( $previous = get_next_post() ) : ?>
-                <a href="<?php echo get_permalink( $previous->ID ); ?>">
-                    <?php $roles = wp_get_post_terms( $previous->ID, 'role', array( 'fields' => 'names' ) ); ?>
-                    <?php echo get_the_post_thumbnail( $previous->ID, 'medium' ); ?>
-                    <h3 className="btn"><span className="glyphicon glyphicon-chevron-left"></span> Previous Project</h3>
-                    <strong><?php echo get_the_title( $previous->ID ); ?></strong>
-                    <p><?php echo implode( ', ', $roles ); ?></p>
-                </a>
-                <?php endif; ?>
+            <div id="project-pagination" ref={ref} className={inView ? "active" : ""}>
+                <div className="container">
+                    <div className="row">
+                        <div className="previous col-6">
+                            <Link href={`/work/${previous.slug}`}>
+                                <a>
+                                    <div className="thumbnail">
+                                        <Image src={previous.frontmatter.featuredImage.src} alt={previous.frontmatter.featuredImage.alt} width={previous.frontmatter.featuredImage.width} height={previous.frontmatter.featuredImage.height} layout="responsive" sizes="33vw, (max-width: 767px) 50vw, (max-width: 1199px) 100vw" />
+                                    </div>
+                                    <h3 className="btn">
+                                        <span className="glyphicon glyphicon-chevron-left"></span> Previous Project
+                                    </h3>
+                                    <strong>{previous.frontmatter.title}</strong>
+                                    <p>{previous.frontmatter.role}</p>
+                                </a>
+                            </Link>
+                        </div>
+                        <div className="next col-6">
+                            <Link href={`/work/${next.slug}`}>
+                                <a>
+                                    <div className="thumbnail">
+                                        <Image src={next.frontmatter.featuredImage.src} alt={next.frontmatter.featuredImage.alt} width={next.frontmatter.featuredImage.width} height={next.frontmatter.featuredImage.height} layout="responsive" sizes="33vw, (max-width: 767px) 50vw, (max-width: 1199px) 100vw" />
+                                    </div>
+                                    <h3 className="btn">
+                                        Next Project <span className="glyphicon glyphicon-chevron-right"></span>
+                                    </h3>
+                                    <strong>{next.frontmatter.title}</strong>
+                                    <p>{next.frontmatter.role}</p>
+                                </a>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="next col-xs-6">
-                <?php if ( $next = get_previous_post() ) : ?>
-                <a href="<?php echo get_permalink( $next->ID ); ?>">
-                    <?php $roles = wp_get_post_terms( $next->ID, 'role', array( 'fields' => 'names' ) ); ?>
-                    <?php echo get_the_post_thumbnail( $next->ID, 'medium' ); ?>
-                    <h3 className="btn">Next Project <span className="glyphicon glyphicon-chevron-right"></span></h3>
-                    <strong><?php echo get_the_title( $next->ID ); ?></strong>
-                    <p><?php echo implode( ', ', $roles ); ?></p>
-                </a>
-                <?php else : ?>
-                    <h3>That's all She Wrote!</h3>
-                    <p>Thanks for exploring my portfolio of recent<br />web design &amp; development projects.</p>
-                    <a className="btn" href="/contact/"><span className="glyphicon glyphicon-phone-alt"></span> Get In Touch</a>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</div> */}
         </div>
     );
 };
@@ -105,10 +111,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const source = getProject(params.slug);
-    const project = await serialize(source, { parseFrontmatter: true });
+    const projectData = await getProjectData(params.slug);
 
-    return { props: { project } };
+    return { props: projectData };
 }
 
 export default Project;

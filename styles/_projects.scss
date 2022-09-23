@@ -136,8 +136,8 @@ html.js.csstransforms .project-excerpt {
         }
     }
 
-    img {
-        display: inline-block;
+    .thumbnail {
+        width: 100%;
         max-width: 120px;
         margin-top: -30px;
         margin-bottom: 10px;
@@ -185,20 +185,16 @@ html.js.csstransforms .project-excerpt {
     .next {
         text-align: right;
 
-        img {
-            @include respond-to(tablet) {
-                float: right;
-                margin-left: 1em;
-            }
+        .thumbnail {
+            float: right;
+            margin-left: 1em;
         }
     }
 
     .previous {
-        img {
-            @include respond-to(tablet) {
-                float: left;
-                margin-right: 1em;
-            }
+        .thumbnail {
+            float: left;
+            margin-right: 1em;
         }
     }
 }
@@ -232,7 +228,7 @@ html.js.csstransforms #project-pagination {
         }
     }
 
-    &.show {
+    &.active {
         a {
             opacity: 1;
             transform: translateY(0);
