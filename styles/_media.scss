@@ -7,7 +7,7 @@ video,
 iframe,
 picture {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -42,7 +42,8 @@ picture img {
 
     // Slightly overflow "covered" images to prevent flickering around edges
     > img,
-    > video {
+    > video,
+    > iframe {
         position: absolute;
         left: -1px;
         top: -1px;
@@ -55,7 +56,8 @@ picture img {
     // Don't overflow "contained" images, to prevent clipping logos, etc.
     &.contain {
         > img,
-        > video {
+        > video,
+        > iframe {
             @include fill;
             object-fit: contain;
         }

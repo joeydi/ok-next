@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote";
 
 export default function PostLink({ post }) {
@@ -11,9 +12,11 @@ export default function PostLink({ post }) {
 
             <MDXRemote {...post} />
 
-            <a href="" className="permalink">
-                <span>Permalink</span>
-            </a>
+            <Link href={`/${post.slug}`}>
+                <a className="permalink">
+                    <span>Permalink</span>
+                </a>
+            </Link>
         </div>
     );
 }

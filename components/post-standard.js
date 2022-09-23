@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote";
 
@@ -14,7 +15,7 @@ export default function PostStandard({ post }) {
 
             <div className="post-content">
                 <h1>
-                    <a href="">{post.frontmatter.title}</a>
+                    <Link href={`/${post.slug}`}>{post.frontmatter.title}</Link>
                 </h1>
                 <MDXRemote {...post} />
             </div>
