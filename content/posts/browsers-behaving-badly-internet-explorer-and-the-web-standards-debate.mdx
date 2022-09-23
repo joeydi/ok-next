@@ -1,0 +1,50 @@
+---
+format: standard
+title: 'Browsers Behaving Badly: Internet Explorer and the Web Standards Debate'
+date: '2008-03-20T00:00:00'
+tags:
+  - microsoft
+  - web standards
+---
+
+<p>For a long time now Microsoft&#8217;s Internet Explorer has been the world&#8217;s most widely used web browser. According to TheCounter.com, at one point in 2004 it accounted for more than 95% of browser usage. Over the past few years, browsers such as Mozilla Firefox and Apple&#8217;s Safari, among others, have been gaining market share, and at the time of this writing Internet Explorer accounts for approximately 75% of browser use.</p>
+
+<p>A wide variety of browsers to choose from is good for everyone. Competition forces browser makers to keep their products top-notch, and consumers also have a wider selection so they can find the browser that best fits their ideal.</p>
+
+<p>With the wide variety of web browsers available, there exists a need for uniformity in how they diplay web pages. Internet users should be able to expect a site they visit online to look the same regardless of the software they are using. If you open a PDF, a text file, or a JPEG, for example, it will look exactly the same on any platform and with any software, with very few exceptions. The same should be true for web pages, within reason. The reason you can sit down at any web browser, and have a similar experience on the web is due in large part to web standards. The <a href="http://w3c.org">World Wide Web Consortium</a> publishes specs for the various web standards such as HTML, XHTML, and CSS, among others. These specs define the standards for how web pages should be created, and for how web browsers should render those pages.</p>
+
+<h2>IE6 is The Only Browser That Matters</h2>
+
+<p>Back in the days when Internet Explorer 6 held 95% percent of the market, adhering to standards was not Microsoft&#8217;s number one priority. If IE6 exhibited some non-standard behaviors, well who really cares, because no one will ever kno. the difference. So over the next few years millions of web pages were created from the &#8220;IE6 is the only browser that matters&#8221; point of view, playing into all of its little quirks.</p>
+
+<p>Well, after a five year hiatus Microsoft wants back in the browser game, and they want to join the web standards party. &#8220;The more, the merrier&#8221;, I say.</p>
+
+<h2>You Reap What You Sow</h2>
+
+<p>Unfortunately, Internet Explorer&#8217;s developers find themselves in a bit of a tight spot. those millions, if not billions, of pages pages I mentioned before look like shit when IE tries to render them in &#8220;standards mode&#8221;. The problem is that all those pages expect IE to render them improperly, so when it suddenly renders them differently they fall apart. Its kind of like if you were leaning into the wind to keep your balance. If the wind suddenly stops, you are going to fall flat on your face. And that is exactly what&#8217;s happening:</p>
+
+<p><img loading="lazy"  className="alignnone size-full wp-image-3113" alt="111" src="http://okaypl.us/wp-content/uploads/2008/03/111.jpg" width="500" height="288"  srcSet="https://okaypl.us/wp-content/uploads/2008/03/111.jpg 500w, https://okaypl.us/wp-content/uploads/2008/03/111-300x172.jpg 300w, https://okaypl.us/wp-content/uploads/2008/03/111-480x276.jpg 480w" sizes="(max-width: 500px) 100vw, 500px" /></p>
+
+<p>Granted, that looks like an extreme case, but the point remains. Sites that looked fine in IE6 may be completely broken in IE7 and IE8.</p>
+
+<h2>So What Now?</h2>
+
+<p>There is a debate going on within Microsoft about how to handle this tricky situation. Their <a href="http://blogs.msdn.com/ie/archive/2008/01/21/compatibility-and-ie8.aspx">initial response</a> was to render pages as they always had in the past, unless the page includes a special piece of new code which specifically prescribes IE8 to render in standards mode. In this way, old pages display as they always have, and new pages can be written to take advantage of IE&#8217;s newfound abilities. This seems like a reasonable solution, but there are a few drawbacks. On one hand web developers would have to add code code specifically for one browser, but on the other hand it can be argued that we have been doing that for years with CSS hacks, PNG fixes, and the like. The other problem I see is that this can hardly be considered progress, as most of the time IE would continue behaving as it always has.</p>
+
+<p>More recently, Microsoft has <a href="http://blogs.msdn.com/ie/archive/2008/03/03/microsoft-s-interoperability-principles-and-ie8.aspx">reversed their positon</a>, saying that all properly formed web pages will be rendered in &#8220;standards mode&#8221; by default. This is the correct course of action, as it encourages web developers to adhere to standards, which leads to greater interoperability in the future. Web sites that break in IE8 will need to be updated, and that is a good thing.</p>
+
+<p>What about all those orphaned web pages out there that don&#8217;t have a caretaker to bring them up to code. The people who really need those pages to render as they did in the past can keep a copy of IE6 kicking around, or use an IE6 emulator. But it would be a shame if a modern browser was designed to emulate on old, broken one.</p>
+
+<h2>Further Reading</h2>
+
+<ul>
+<li><a href="http://www.joelonsoftware.com/items/2008/03/17.html">Martian Headsets</a></li>
+</ul>
+
+<p>This post was initally just going to be a link to this article by Joel Spolsky. He gives a really good run-down of all the issues at hand and how we got to this point, and uses a really interesting analogy to illustrate the complexity of the problem.</p>
+
+<ul>
+<li><a href="http://alistapart.com/articles/beyonddoctype">Beyond DOCTYPE: Web Standards, Forward Compatibility, and IE8</a></li>
+</ul>
+
+<p>This article was published after Microsoft made its original announcement on IE8&#8217;s proposed behavior. It gives a more technical description of the &#8220;version targeting&#8221; solution.</p>

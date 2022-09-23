@@ -1,0 +1,36 @@
+---
+format: standard
+title: Using a Custom Image Size In WordPress SEO Open Graph Tags
+date: '2014-11-16T01:47:16'
+tags:
+  - facebook
+  - plugin
+  - seo
+  - wordpress
+---
+
+<p><a href="https://yoast.com/wordpress/plugins/seo/">WordPress SEO</a> is an essential plugin for any WordPress site. Although WordPress in general is pretty great for SEO, this plugin handles a ton of methods for improving your site&#8217;s SEO, from generation XML sitemaps to suggesting keywords for your content.</p>
+
+<p>One area where the WordPress SEO plugin really shines is with <a href="http://ogp.me/">Open Graph tags</a>, which define how your content is shared with certain social networks, most notably Facebook. The WordPress SEO plugin will automatically generate the following Open Graphs tags for each page of your site:</p>
+
+{/* <script src="https://gist.github.com/joeydi/be3445c21b4f22080047.js"></script> */}
+
+<p>If you have a Featured Image set for the post or page, the plugin will also generate an <code>og:image</code> tag. However, by default the URL of the original image will be used. This can prove to be problematic if the original image is very large, or has uncommon proportions. If you have defined a custom image size in your theme using <a href="http://codex.wordpress.org/Function_Reference/add_image_size"><code>add_image_size()</code></a> you may wish to use that size instead. Thankfully, the WordPress SEO plugin applies a filter, <code>wpseo_opengraph_image_size</code>, to the value used when grabbing the image URL for the open graph tag. Add a hook in your theme&#8217;s <code>functions.php</code> file similar to the following:</p>
+
+{/* <script src="https://gist.github.com/joeydi/d8328445543876172594.js"></script> */}
+
+<p>In this example I&#8217;ve set the image size as &#8216;large&#8217;, which will be contained to 1024&#215;1024 pixels. You can use any image size you want, but keep these requirements in mind from the official <a href="https://developers.facebook.com/blog/post/2013/04/03/platform-updates--operation-developer-love/">Facebook Developer blog</a>:</p>
+
+<blockquote>
+<p>Images must be at least 200&#215;200 pixels for desktop web and ideally, 600&#215;600 pixels or greater for the best experience across devices.</p>
+
+<p>Images may not appear in the new design if they are smaller than 200&#215;200 pixels, and rectangular photos may be cropped.</p>
+
+<p>Image requirements include:</p>
+<ul>
+    <li>4 Megapixel limit</li>
+    <li>5MB limit</li>
+    <li>direct links to the image only</li>
+    <li>only JPG, PNG, GIF, or BMP file formats</li>
+</ul>
+</blockquote>

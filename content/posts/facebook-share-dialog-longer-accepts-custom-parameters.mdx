@@ -1,0 +1,36 @@
+---
+format: standard
+title: Facebook Share Dialog No Longer Accepts Custom Parameters
+date: '2014-07-09T02:46:41'
+tags: []
+---
+
+<p>The Facebook share dialog is a service that Facebook provides which makes it easy to share links from a website on a user&#8217;s timeline. Essentially it is a webpage hosted by Facebook, which loads the link to be shared, and allows the user to add a comment before posting.</p>
+
+<p>The share dialog URL is:
+<code>https://www.facebook.com/sharer/sharer.php</code>.</p>
+
+<p>To share a link, you append a query parameter &#8220;u&#8221; as follows:
+<code>https://www.facebook.com/sharer/sharer.php?u=http://okaypl.us/</code></p>
+
+<p><img loading="lazy"  className="alignnone size-full wp-image-3479" alt="Facebook Share Dialog" src="http://okaypl.us/wp-content/uploads/2014/07/facebook-share-dialog.png" width="647" height="441"  srcSet="https://okaypl.us/wp-content/uploads/2014/07/facebook-share-dialog.png 647w, https://okaypl.us/wp-content/uploads/2014/07/facebook-share-dialog-300x204.png 300w, https://okaypl.us/wp-content/uploads/2014/07/facebook-share-dialog-480x327.png 480w" sizes="(max-width: 647px) 100vw, 647px" /></p>
+
+<p>You can see in the screenshot above that the dialog pulls in the page title, description, and thumbnail image automatically.</p>
+
+<p>In the past, web developers were able to customize those elements by adding additional query parameters to the share dialog URL:</p>
+
+<ul>
+    <li><code>p[title]</code> = Custom Title</li>
+    <li><code>p[summary]</code> = Custom Description</li>
+    <li><code>p[images][0]</code> = Custom Thumbnail Image</li>
+</ul>
+
+<p>There are still many page online that describe how to use these additional parameters to customize the share dialog. However, earlier this year Facebook began ignoring all additional parameters beyond the URL to be shared.</p>
+
+<p>All of the shared content is now pulled from the page&#8217;s <a href="http://ogp.me/">Open Graph tags</a>. For instance if you want to change the title or description, you must edit the page&#8217;s <code>og:title</code> or <code>og:description</code> meta tags, respectively.</p>
+
+<p>For example, take a look at the Open Graph tags for this site&#8217;s home page, and you can see how they correlate to the content pulled into the Facebook Share dialog above:</p>
+
+{/* <script src="https://gist.github.com/joeydi/be3445c21b4f22080047.js"></script> */}
+
+<p>If you are a developer, you should double check that your pages have proper Open Graph meta tags. For WordPress website, I highly recommend the <a href="https://yoast.com/wordpress/plugins/seo/">WordPress SEO plugin</a>, which will do the heavy lifting for you, while still allowing you to customize the tags on a per-page basis.</p>
