@@ -43,6 +43,11 @@ export default function Header() {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/blog/" onClick={hideNav} legacyBehavior={false}>
+                                    Blog
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/contact/" onClick={hideNav} legacyBehavior={false}>
                                     Contact
                                 </Link>

@@ -3,7 +3,7 @@ const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
     images: {
-        domains: ["simple-creature-website-assets.s3.amazonaws.com"],
+        domains: ["simple-creature-website-assets.s3.amazonaws.com", "okaypl.us"],
     },
     webpack(config) {
         config.module.rules.push({

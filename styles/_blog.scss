@@ -49,6 +49,10 @@
     position: relative;
     margin-bottom: 40px;
 
+    &:last-child {
+        margin-bottom: 0;
+    }
+
     @include respond-to(tablet) {
         margin-bottom: 60px;
     }
@@ -63,14 +67,6 @@
     blockquote,
     iframe {
         margin-bottom: 1em;
-    }
-}
-
-.row:last-child {
-    .post,
-    .quote,
-    .link {
-        margin-bottom: 0;
     }
 }
 
@@ -212,7 +208,7 @@
     }
 
     &:before {
-        font-family: 'icons';
+        font-family: "icons";
         speak: none;
         font-style: normal;
         font-weight: normal;
