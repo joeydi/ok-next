@@ -3,17 +3,17 @@ import { MDXRemote } from "next-mdx-remote";
 
 export default function PostLink({ post }) {
     return (
-        <div class="post video">
+        <div className="post video">
             <div className="aspect aspect-widescreen" dangerouslySetInnerHTML={{ __html: post.frontmatter.video }} />
-            <div class="post-content">
+            <div className="post-content">
                 <h1>
                     <Link href={`/${post.slug}`}>{post.frontmatter.title}</Link>
                 </h1>
                 <MDXRemote {...post} />
             </div>
-            <div class="post-meta">
-                <div class="date">
-                    <span class="icon-clock"></span>
+            <div className="post-meta">
+                <div className="date">
+                    <span className="icon-clock"></span>
                     {/* <?php the_time( get_option( 'date_format' ) ); ?> */}
                 </div>
 

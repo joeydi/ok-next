@@ -3,12 +3,12 @@ import { MDXRemote } from "next-mdx-remote";
 
 export default function PostQuote({ post }) {
     return (
-        <div class="quote">
+        <div className="quote">
             <blockquote>
                 <MDXRemote {...post} />
             </blockquote>
 
-            <p class="quote-source">
+            <p className="quote-source">
                 &mdash;&nbsp;
                 {post.frontmatter.link ? <a href={post.frontmatter.link}>{post.frontmatter.title}</a> : post.frontmatter.title}
             </p>
