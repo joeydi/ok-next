@@ -7,7 +7,7 @@ export default function ProjectImages({ images }) {
 
     useEffect(() => {
         new Masonry(projectImages.current);
-    }, []);
+    }, [images]);
 
     return (
         <div className="project-images row" ref={projectImages}>
