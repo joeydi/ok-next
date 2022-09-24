@@ -56,7 +56,7 @@ async function importPosts() {
 
     const posts = response.data;
 
-    let postData = await Promise.all(
+    const postData = await Promise.all(
         posts.map(async (post) => {
             const tags = await Promise.all(post.tags.map(async (id) => getTagByID(id)));
 

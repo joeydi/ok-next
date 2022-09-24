@@ -1,31 +1,31 @@
-import { fetchAPI } from "@/lib/api";
+import { getPostPaths, getPostData } from "@/lib/blog";
+import Post from "@/components/post";
 
-export default function Post({ post }) {
-    return <h1>This is a blog post: {post.attributes.title}</h1>;
+export default function BlogPost({ post }) {
+    return (
+        <div id="content">
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-md-10 col-lg-8">
+                        <Post post={post} />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export async function getStaticPaths() {
-    const posts = await fetchAPI("posts", { fields: ["slug"] });
+    const paths = getPostPaths();
 
     return {
-        paths: posts.data.map((post) => ({
-            params: {
-                slug: post.attributes.slug,
-            },
-        })),
+        paths,
         fallback: false,
     };
 }
 
 export async function getStaticProps({ params }) {
-    const posts = await fetchAPI("posts", {
-        filters: {
-            slug: params.slug,
-        },
-    });
+    const postData = await getPostData(params.slug);
 
-    return {
-        props: { post: posts.data[0] },
-        revalidate: 60,
-    };
+    return { props: postData };
 }

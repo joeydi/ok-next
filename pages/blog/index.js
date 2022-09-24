@@ -1,27 +1,10 @@
-import Link from "next/link";
 import Head from "next/head";
-import Image from "next/image";
-
 import { getPosts } from "@/lib/blog";
-
-import PostStandard from "@/components/post-standard";
-import PostLink from "@/components/post-link";
-import PostQuote from "@/components/post-quote";
-import PostVideo from "@/components/post-video";
-
-const getPostComponent = function (format) {
-    const components = {
-        link: PostLink,
-        quote: PostQuote,
-        video: PostVideo,
-    };
-
-    return components[format] ?? PostStandard;
-};
+import Post from "@/components/post";
 
 export default function Blog({ posts }) {
     return (
-        <div className="work">
+        <div className="blog">
             <Head>
                 <title key="title">Blog - Okay Plus</title>
             </Head>
@@ -32,15 +15,13 @@ export default function Blog({ posts }) {
                     </div>
                 </div>
             </div>
-
             <div id="content">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-10 col-lg-8">
-                            {posts.map((post, i) => {
-                                const PostComponent = getPostComponent(post.frontmatter.format);
-                                return <PostComponent post={post} key={i} />;
-                            })}
+                            {posts.map((post, i) => (
+                                <Post post={post} key={i} />
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -50,7 +31,7 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps() {
-    let posts = await getPosts();
+    const posts = await getPosts();
 
     return {
         props: {
