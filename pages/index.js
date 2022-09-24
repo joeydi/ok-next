@@ -7,7 +7,7 @@ import ChevronRight from "@/icons/chevron-right.svg";
 import Clock from "@/components/clock.js";
 import Testimonial from "@/components/testimonial.js";
 
-import phone from "@/images/phone.png";
+import phone from "@/images/phone-upscaled.png";
 import tony from "@/images/testimonials/tony.jpg";
 import kathleen from "@/images/testimonials/kathleen.jpg";
 import jeremy from "@/images/testimonials/jeremy.jpg";
@@ -72,7 +72,7 @@ export default function Home() {
             <div id="hero" className={`home ${heroActive ? "active" : ""}`}>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-5">
+                        <div className="col-lg-5">
                             <h1>Okay Plus is the web design studio of Joe di Stefano</h1>
                             <p>Critical thinking, clean code and responsive design. These are the tools I use to bring digital experiences to life online.</p>
                             <a className="btn" href="<?php echo home_url( '/work/' ); ?>">
@@ -84,7 +84,7 @@ export default function Home() {
                                 <ChevronRight className="icon ms-10" />
                             </a>
                         </div>
-                        <div className="col-md-7">
+                        <div className="col-lg-7">
                             <img id="phone" src={phone.src} alt="" />
                         </div>
                     </div>
