@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { getPostPageCount, getPostPagePaths, getPosts } from "@/lib/blog";
+import { getPostPageCount, getPostPagePaths, getPaginatedPosts } from "@/lib/blog";
 import Post from "@/components/post";
 
 import ChevronLeft from "@/icons/chevron-left.svg";
@@ -73,7 +73,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const page = params.page * 1;
-    const posts = await getPosts(page);
+    const posts = await getPaginatedPosts(page);
     const pageCount = getPostPageCount();
     const previousPage = page && page > 1 ? page - 1 : null;
     const nextPage = page && page < pageCount ? page + 1 : null;

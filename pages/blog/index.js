@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getPosts } from "@/lib/blog";
+import { getPaginatedPosts } from "@/lib/blog";
 import Post from "@/components/post";
 
 export default function Blog({ posts }) {
@@ -31,7 +31,7 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps() {
-    const posts = await getPosts();
+    const posts = await getPaginatedPosts();
 
     return {
         props: {
