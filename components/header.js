@@ -20,7 +20,7 @@ export default function Header() {
                 <div className="row">
                     <div className="col-6 col-md-3">
                         <Link href="/">
-                            <a>
+                            <a title="Okay Plus logo">
                                 <Logo />
                             </a>
                         </Link>
