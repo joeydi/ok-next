@@ -24,8 +24,12 @@ export default function PostLink({ post }) {
                 {!!post.frontmatter.tags.length && (
                     <div className="tags">
                         <span className="icon-tag"></span>&nbsp;
-                        {post.frontmatter.tags.map((tag) => {
-                            return <Link href={`/blog/tag/${tag}`}>{tag}</Link>;
+                        {post.frontmatter.tags.map((tag, i) => {
+                            return (
+                                <Link href={`/blog/tag/${tag}`} key={i}>
+                                    {tag}
+                                </Link>
+                            );
                         })}
                     </div>
                 )}
