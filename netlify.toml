@@ -1,2 +1,2 @@
 [functions]
-  included_files = ["public/locales/*"]
+  included_files = ["content/posts/*"]
