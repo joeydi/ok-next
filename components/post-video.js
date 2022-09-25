@@ -2,6 +2,8 @@ import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote";
 
 export default function PostLink({ post }) {
+    const date = post.frontmatter.date ? new Date(post.frontmatter.date).toLocaleDateString("en-us", { year: "numeric", month: "long", day: "numeric" }) : null;
+
     return (
         <div className="post video">
             <div className="aspect aspect-widescreen" dangerouslySetInnerHTML={{ __html: post.frontmatter.video }} />
@@ -12,15 +14,19 @@ export default function PostLink({ post }) {
                 <MDXRemote {...post} />
             </div>
             <div className="post-meta">
-                <div className="date">
-                    <span className="icon-clock"></span>
-                    {/* <?php the_time( get_option( 'date_format' ) ); ?> */}
-                </div>
+                {date && (
+                    <div className="date">
+                        <span className="icon-clock"></span>&nbsp;
+                        {date}
+                    </div>
+                )}
 
-                {post.frontmatter.tags && (
+                {!!post.frontmatter.tags.length && (
                     <div className="tags">
-                        <span className="icon-tag"></span>
-                        {post.frontmatter.tags}
+                        <span className="icon-tag"></span>&nbsp;
+                        {post.frontmatter.tags.map((tag) => {
+                            return <Link href={`/blog/tag/${tag}`}>{tag}</Link>;
+                        })}
                     </div>
                 )}
             </div>

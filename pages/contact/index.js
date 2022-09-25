@@ -28,7 +28,7 @@ export default function Contact() {
                                     <a href="mailto:joeydi@okaypl.us">joeydi@okaypl.us</a>
                                 </p>
                                 <div className="footer">
-                                    <a href="<?php the_field( 'vcard', 'options' ); ?>">
+                                    <a href="/joe-di-stefano.vcf">
                                         <Save className="icon me-10" /> Download vCard
                                     </a>
                                 </div>

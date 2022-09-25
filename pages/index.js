@@ -75,14 +75,18 @@ export default function Home() {
                         <div className="col-lg-5">
                             <h1>Okay Plus is the web design studio of Joe di Stefano</h1>
                             <p>Critical thinking, clean code and responsive design. These are the tools I use to bring digital experiences to life online.</p>
-                            <a className="btn" href="<?php echo home_url( '/work/' ); ?>">
-                                View My Work
-                                <ChevronRight className="icon ms-10" />
-                            </a>
-                            <a className="btn" href="<?php echo home_url( '/contact/' ); ?>">
-                                Get In Touch
-                                <ChevronRight className="icon ms-10" />
-                            </a>
+                            <Link href="/work">
+                                <a className="btn">
+                                    View My Work
+                                    <ChevronRight className="icon ms-10" />
+                                </a>
+                            </Link>
+                            <Link href="/contact">
+                                <a className="btn">
+                                    Get In Touch
+                                    <ChevronRight className="icon ms-10" />
+                                </a>
+                            </Link>
                         </div>
                         <div className="col-lg-7">
                             <img id="phone" src={phone.src} alt="" />
