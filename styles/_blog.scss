@@ -6,10 +6,12 @@
             margin-bottom: 0;
         }
     }
+
     input,
     button {
         border: none;
         color: $red;
+        background-color: $white;
         text-transform: uppercase;
         font-weight: $bold;
     }
