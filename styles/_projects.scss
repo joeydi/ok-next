@@ -115,7 +115,8 @@ html.js.csstransforms .project-excerpt {
     }
 
     .btn {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
         background: $white;
         color: $red;
         border-radius: 5px;
@@ -200,13 +201,10 @@ html.js.csstransforms .project-excerpt {
 }
 
 html.js.csstransforms #project-pagination {
-    * {
-        transition: all 0.75s;
-    }
-
     a {
         opacity: 0;
         transform: translateY(200px);
+        transition: all 0.75s;
 
         &:hover img {
             transition: all 0.25s;
@@ -218,6 +216,7 @@ html.js.csstransforms #project-pagination {
     strong,
     p {
         transform: translateX(-100px);
+        transition: all 0.75s;
     }
 
     .next {

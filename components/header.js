@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 import Logo from "@/images/logo.svg";
+import Hamburger from "@/icons/hamburger.svg";
 
 export default function Header() {
     const [navActive, setNavActive] = useState(false);
@@ -27,7 +28,8 @@ export default function Header() {
                     </div>
                     <div className="col-6 d-md-none">
                         <button id="menu-trigger" onClick={toggleNav}>
-                            <i className="icon-list"></i>
+                            <Hamburger width="30" height="30" />
+                            <span className="visually-hidden">{navActive ? "Hide Menu" : "Show Menu"}</span>
                         </button>
                     </div>
                     <nav className={`col-12 col-md-9 ${navActive ? "active" : ""}`}>

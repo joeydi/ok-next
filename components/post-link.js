@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote";
 
+import Bookmark from "@/icons/bookmark.svg";
+
 export default function PostLink({ post }) {
     return (
         <div className="link">
@@ -14,7 +16,8 @@ export default function PostLink({ post }) {
 
             <Link href={`/${post.slug}`}>
                 <a className="permalink">
-                    <span>Permalink</span>
+                    <span class="visually-hidden">Permalink</span>
+                    <Bookmark width="20" height="20" />
                 </a>
             </Link>
         </div>

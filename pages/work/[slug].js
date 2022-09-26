@@ -7,6 +7,7 @@ import { getProjectPaths, getProjectData } from "@/lib/work";
 
 import User from "@/icons/user.svg";
 import Briefcase from "@/icons/briefcase.svg";
+import ChevronLeft from "@/icons/chevron-left.svg";
 import ChevronRight from "@/icons/chevron-right.svg";
 
 const ProjectImages = dynamic(() => import("@/components/project-images"), { ssr: false });
@@ -73,7 +74,8 @@ const Project = ({ project, next, previous }) => {
                                         <Image src={previous.frontmatter.featuredImage.src} alt={previous.frontmatter.featuredImage.alt} width={previous.frontmatter.featuredImage.width} height={previous.frontmatter.featuredImage.height} layout="responsive" sizes="33vw, (max-width: 767px) 50vw, (max-width: 1199px) 100vw" />
                                     </div>
                                     <h3 className="btn">
-                                        <span className="glyphicon glyphicon-chevron-left"></span> Previous Project
+                                        <ChevronLeft className="icon me-5" />
+                                        Previous Project
                                     </h3>
                                     <strong>{previous.frontmatter.title}</strong>
                                     <p>{previous.frontmatter.role}</p>
@@ -87,7 +89,8 @@ const Project = ({ project, next, previous }) => {
                                         <Image src={next.frontmatter.featuredImage.src} alt={next.frontmatter.featuredImage.alt} width={next.frontmatter.featuredImage.width} height={next.frontmatter.featuredImage.height} layout="responsive" sizes="33vw, (max-width: 767px) 50vw, (max-width: 1199px) 100vw" />
                                     </div>
                                     <h3 className="btn">
-                                        Next Project <span className="glyphicon glyphicon-chevron-right"></span>
+                                        Next Project
+                                        <ChevronRight className="icon ms-5" />
                                     </h3>
                                     <strong>{next.frontmatter.title}</strong>
                                     <p>{next.frontmatter.role}</p>

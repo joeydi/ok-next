@@ -15,7 +15,6 @@
 @import "bootstrap/scss/dropdown";
 
 @import "typography";
-@import "icons";
 @import "home";
 @import "services";
 @import "projects";
@@ -60,20 +59,17 @@ footer {
         color: $black;
     }
 
-    [class^="icon-"],
-    [class*=" icon-"] {
-        display: inline-block;
-        width: 36px;
-        height: 36px;
-        margin-right: 4px;
-        font-size: 36px;
-        white-space: nowrap;
-        overflow: hidden;
-    }
+    #social {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
 
-    #social a {
-        padding: 0;
-        text-decoration: none;
+        a {
+            display: block;
+            margin-left: 8px;
+            padding: 0;
+            text-decoration: none;
+        }
     }
 
     .row:first-child {
@@ -119,29 +115,21 @@ footer {
 #menu-trigger {
     display: block;
     float: right;
-    width: 40px;
-    height: 40px;
     padding: 0;
     background: transparent;
     border: none;
     text-align: right;
-    font-size: 40px;
-    line-height: 30px;
     color: $white;
     cursor: pointer;
 
     &:hover {
         text-decoration: none;
     }
-
-    i {
-        line-height: 30px;
-    }
 }
 
 nav {
     max-height: 0;
-    margin-top: 20px;
+    margin-top: 20px !important;
     margin-bottom: -20px;
     padding-left: 0 !important;
     padding-right: 0 !important;

@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote";
 
+import Clock from "@/icons/clock.svg";
+import Tag from "@/icons/tag.svg";
+
 export default function PostLink({ post }) {
     const date = post.frontmatter.date ? new Date(post.frontmatter.date).toLocaleDateString("en-us", { year: "numeric", month: "long", day: "numeric" }) : null;
 
@@ -16,14 +19,14 @@ export default function PostLink({ post }) {
             <div className="post-meta">
                 {date && (
                     <div className="date">
-                        <span className="icon-clock"></span>&nbsp;
+                        <Clock class="me-5" />
                         {date}
                     </div>
                 )}
 
                 {!!post.frontmatter.tags.length && (
                     <div className="tags">
-                        <span className="icon-tag"></span>&nbsp;
+                        <Tag class="me-5" />
                         {post.frontmatter.tags.map((tag, i) => {
                             return (
                                 <Link href={`/blog/tag/${tag}`} key={i}>

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote";
 
+import Quote from "@/icons/quote.svg";
+
 export default function PostQuote({ post }) {
     return (
         <div className="quote">
@@ -15,7 +17,8 @@ export default function PostQuote({ post }) {
 
             <Link href={`/${post.slug}`}>
                 <a className="permalink">
-                    <span>Permalink</span>
+                    <span class="visually-hidden">Permalink</span>
+                    <Quote width="24" height="24" />
                 </a>
             </Link>
         </div>

@@ -16,10 +16,10 @@ export default function BlogIndex({ posts, previousPage, nextPage }) {
             <div id="hero">
                 <div className="container">
                     <div className="row">
-                        <div className="col-4 col-lg-4 offset-lg-1 col-xl-4 offset-xl-2">
+                        <div className="col-sm-6 col-lg-4 offset-lg-1 col-xl-4 offset-xl-2">
                             <BlogSearch />
                         </div>
-                        <div className="col-6">
+                        <div className="col-sm-6">
                             <div className="btn-group">
                                 <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                     Archives <span className="caret"></span>

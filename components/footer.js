@@ -1,3 +1,9 @@
+import Twitter from "@/icons/twitter.svg";
+import Facebook from "@/icons/facebook.svg";
+import LinkedIn from "@/icons/linkedin.svg";
+import Dribbble from "@/icons/dribbble.svg";
+import GitHub from "@/icons/github.svg";
+
 export default function Footer() {
     return (
         <footer>
@@ -23,23 +29,26 @@ export default function Footer() {
                         <p>&copy; 2022 Okay Plus, 47 Maple St, Suite 220, Burlington, VT 05401</p>
                     </div>
                     <div id="social" className="col-sm-4">
-                        <p>
-                            <a className="icon-twitter" href="https://twitter.com/joeydi">
-                                Twitter
-                            </a>
-                            <a className="icon-facebook" href="https://www.facebook.com/okayplusdesign">
-                                Facebook
-                            </a>
-                            <a className="icon-linkedin" href="http://www.linkedin.com/in/joeydi">
-                                LinkedIn
-                            </a>
-                            <a className="icon-dribbble" href="http://dribbble.com/joeydi">
-                                Dribbble
-                            </a>
-                            <a className="icon-github" href="https://github.com/joeydi">
-                                Github
-                            </a>
-                        </p>
+                        <a href="https://twitter.com/joeydi" target="_blank" rel="noopener noreferrer">
+                            <span className="visually-hidden">Twitter</span>
+                            <Twitter width="36" height="36" />
+                        </a>
+                        <a href="https://www.facebook.com/okayplusdesign" target="_blank" rel="noopener noreferrer">
+                            <span className="visually-hidden">Facebook</span>
+                            <Facebook width="36" height="36" />
+                        </a>
+                        <a href="http://www.linkedin.com/in/joeydi" target="_blank" rel="noopener noreferrer">
+                            <span className="visually-hidden">LinkedIn</span>
+                            <LinkedIn width="36" height="36" />
+                        </a>
+                        <a href="http://dribbble.com/joeydi" target="_blank" rel="noopener noreferrer">
+                            <span className="visually-hidden">Dribbble</span>
+                            <Dribbble width="36" height="36" />
+                        </a>
+                        <a href="https://github.com/joeydi" target="_blank" rel="noopener noreferrer">
+                            <span className="visually-hidden">GitHub</span>
+                            <GitHub width="36" height="36" />
+                        </a>
                     </div>
                 </div>
             </div>
