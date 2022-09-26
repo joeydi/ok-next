@@ -18,11 +18,9 @@ export default function BlogSearch() {
         <form className="form-inline" role="form" method="get" action="/" onSubmit={submitSearchQuery}>
             <div className="input-group">
                 <input ref={searchInputRef} type="search" className="form-control" id="s" name="s" placeholder="Search..." />
-                <span className="input-group-btn">
-                    <button className="btn btn-default" type="submit">
-                        <span className="glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
+                <button className="btn btn-default" type="submit">
+                    Search
+                </button>
             </div>
         </form>
     );

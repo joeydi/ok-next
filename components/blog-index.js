@@ -8,7 +8,6 @@ import ChevronLeft from "@/icons/chevron-left.svg";
 import ChevronRight from "@/icons/chevron-right.svg";
 
 export default function BlogIndex({ posts, previousPage, nextPage }) {
-    console.log(posts, previousPage, nextPage);
     return (
         <div className="blog">
             <Head>
@@ -17,10 +16,10 @@ export default function BlogIndex({ posts, previousPage, nextPage }) {
             <div id="hero">
                 <div className="container">
                     <div className="row">
-                        <div className="col-sm-4 col-md-4 col-md-offset-1 col-lg-4 col-lg-offset-2">
+                        <div className="col-4 col-lg-4 offset-lg-1 col-xl-4 offset-xl-2">
                             <BlogSearch />
                         </div>
-                        <div className="col-sm-6">
+                        <div className="col-6">
                             <div className="btn-group">
                                 <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                     Archives <span className="caret"></span>
@@ -45,9 +44,19 @@ export default function BlogIndex({ posts, previousPage, nextPage }) {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-10 col-lg-8">
-                            {posts.map((post, i) => (
-                                <Post post={post} key={i} />
-                            ))}
+                            {posts.length ? (
+                                posts.map((post, i) => <Post post={post} key={i} />)
+                            ) : (
+                                <div className="d-flex align-items-center">
+                                    <Link href="/blog">
+                                        <a className="btn btn-light me-20">
+                                            <ChevronLeft className="icon me-5" />
+                                            Go Back
+                                        </a>
+                                    </Link>
+                                    <h2 class="mb-0">No posts were found.</h2>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
