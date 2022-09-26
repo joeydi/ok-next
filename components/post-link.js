@@ -16,7 +16,7 @@ export default function PostLink({ post }) {
 
             <Link href={`/${post.slug}`}>
                 <a className="permalink">
-                    <span class="visually-hidden">Permalink</span>
+                    <span className="visually-hidden">Permalink</span>
                     <Bookmark width="20" height="20" />
                 </a>
             </Link>

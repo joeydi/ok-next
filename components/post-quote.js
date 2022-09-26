@@ -17,7 +17,7 @@ export default function PostQuote({ post }) {
 
             <Link href={`/${post.slug}`}>
                 <a className="permalink">
-                    <span class="visually-hidden">Permalink</span>
+                    <span className="visually-hidden">Permalink</span>
                     <Quote width="24" height="24" />
                 </a>
             </Link>

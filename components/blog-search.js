@@ -22,7 +22,7 @@ export default function BlogSearch() {
                 <input ref={searchInputRef} type="search" className="form-control" id="s" name="s" placeholder="Search..." />
                 <button className="btn btn-default" type="submit">
                     <span className="visually-hidden">Search</span>
-                    <Search class="icon" />
+                    <Search className="icon" />
                 </button>
             </div>
         </form>

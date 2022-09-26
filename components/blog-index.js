@@ -54,7 +54,7 @@ export default function BlogIndex({ posts, previousPage, nextPage }) {
                                             Go Back
                                         </a>
                                     </Link>
-                                    <h2 class="mb-0">No posts were found.</h2>
+                                    <h2 className="mb-0">No posts were found.</h2>
                                 </div>
                             )}
                         </div>

@@ -27,14 +27,14 @@ export default function PostStandard({ post }) {
             <div className="post-meta">
                 {date && (
                     <div className="date">
-                        <Clock class="me-5" />
+                        <Clock className="me-5" />
                         {date} by&nbsp;<Link href="/contact">Joe di Stefano</Link>
                     </div>
                 )}
 
                 {!!post.frontmatter.tags.length && (
                     <div className="tags">
-                        <Tag class="me-5" />
+                        <Tag className="me-5" />
                         {post.frontmatter.tags.map((tag, i) => {
                             return (
                                 <Link href={`/blog/tag/${tag}`} key={i}>
