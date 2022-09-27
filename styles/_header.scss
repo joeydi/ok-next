@@ -1,0 +1,159 @@
+header {
+    padding: 20px 0;
+    background: $red;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+
+    @include respond-to(tablet) {
+        padding: 35px 0;
+    }
+}
+
+#logo {
+    display: block;
+
+    @include respond-to(tablet) {
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    img {
+        height: 30px;
+    }
+}
+
+#menu-trigger {
+    display: block;
+    float: right;
+    padding: 0;
+    background: transparent;
+    border: none;
+    text-align: right;
+    color: $white;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+nav {
+    max-height: 0;
+    margin-top: 20px !important;
+    margin-bottom: -20px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    background-color: $light-red;
+    overflow: hidden;
+    transition: max-height 0.25s;
+
+    &.active {
+        max-height: 1000px;
+    }
+
+    @include respond-to(tablet) {
+        max-height: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        background-color: transparent;
+
+        &.active {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+html.js.csstransforms nav {
+    #menu {
+        perspective: 10000px;
+
+        li a {
+            transform-origin: left center;
+            opacity: 0;
+            transform: scale(0.85);
+        }
+
+        li:nth-child(1) a {
+            transition: all 0.5s;
+        }
+
+        li:nth-child(2) a {
+            transition: all 0.65s;
+        }
+
+        li:nth-child(3) a {
+            transition: all 0.8s;
+        }
+
+        li:nth-child(4) a {
+            transition: all 0.95s;
+        }
+    }
+
+    &.active #menu li a {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    @include respond-to(tablet) {
+        #menu li a {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+#menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        border-bottom: 2px solid $red;
+
+        &:last-child {
+            padding-right: 0;
+            border-bottom: none;
+
+            a {
+            }
+        }
+
+        a,
+        a:visited {
+            display: block;
+            padding: 5px 15px;
+            text-transform: uppercase;
+            font-weight: $bold;
+            color: $white;
+            font-size: 36px;
+        }
+
+        a:hover,
+        a:active {
+            text-decoration: none;
+            background-color: $red;
+        }
+    }
+
+    @include respond-to(tablet) {
+        text-align: right;
+
+        li {
+            height: 30px;
+            line-height: 30px;
+            display: inline-block;
+            padding: 0 20px;
+
+            a,
+            a:visited {
+                padding: 0;
+                font-size: 20px;
+            }
+        }
+    }
+}
