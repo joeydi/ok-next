@@ -141,7 +141,7 @@
 
             &:before {
                 right: auto;
-                left: -55px;
+                left: calc(-11.11% - 8px);
             }
 
             cite:after {
@@ -153,7 +153,7 @@
         }
 
         &:before {
-            right: -55px;
+            right: calc(-11.11% - 8px);
             top: 35px;
             margin-right: 0;
         }
@@ -176,13 +176,7 @@
     }
 
     @include respond-to(widescreen) {
-        &:nth-child(even):before {
-            right: auto;
-            left: -65px;
-        }
-
         &:before {
-            right: -65px;
             top: 22px;
         }
 
