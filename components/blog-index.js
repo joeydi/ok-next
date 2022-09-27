@@ -67,7 +67,7 @@ export default function BlogIndex({ posts, previousPage, nextPage }) {
                         <div className="col-md-10 col-lg-8 d-flex">
                             {previousPage && (
                                 <div className="previous me-20">
-                                    <Link href={`/blog/${previousPage}/`}>
+                                    <Link href={`/blog/page/${previousPage}/`}>
                                         <a className="btn">
                                             <ChevronLeft className="icon me-5" />
                                             Previous Page
@@ -77,7 +77,7 @@ export default function BlogIndex({ posts, previousPage, nextPage }) {
                             )}
                             {nextPage && (
                                 <div className="next ms-auto">
-                                    <Link href={`/blog/${nextPage}/`}>
+                                    <Link href={`/blog/page/${nextPage}/`}>
                                         <a className="btn">
                                             Next Page
                                             <ChevronRight className="icon ms-5" />
