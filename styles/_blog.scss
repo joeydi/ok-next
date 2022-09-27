@@ -48,6 +48,13 @@
             }
         }
     }
+
+    @include respond-to(tablet) {
+        input,
+        button {
+            font-size: rem(14px);
+        }
+    }
 }
 
 .post,
