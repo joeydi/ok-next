@@ -1,4 +1,4 @@
-import { getPostYearPaths, getYearPosts } from "@/lib/blog";
+import { getBlogProps, getPostYearPaths, getYearPosts } from "@/lib/blog";
 import BlogIndex from "@/components/blog-index";
 
 export default function BlogSearch(props) {
@@ -15,11 +15,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const posts = await getYearPosts(params.year);
+    let props = await getBlogProps();
+    props.posts = await getYearPosts(params.year);
 
-    return {
-        props: {
-            posts,
-        },
-    };
+    return { props };
 }

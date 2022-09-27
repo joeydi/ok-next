@@ -1,13 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
 
+import DropdownMenu from "@/components/dropdown-menu";
 import BlogSearch from "@/components/blog-search";
 import Post from "@/components/post";
 
 import ChevronLeft from "@/icons/chevron-left.svg";
 import ChevronRight from "@/icons/chevron-right.svg";
 
-export default function BlogIndex({ posts, previousPage, nextPage }) {
+export default function BlogIndex({ posts, previousPage, nextPage, years, tags }) {
     return (
         <div className="blog">
             <Head>
@@ -20,12 +21,30 @@ export default function BlogIndex({ posts, previousPage, nextPage }) {
                             <BlogSearch />
                         </div>
                         <div className="col-sm-6">
-                            <div className="btn-group">
+                            <DropdownMenu
+                                name="Archives"
+                                items={years.map((year) => ({
+                                    title: year,
+                                    url: `/blog/${year}`,
+                                }))}
+                            />
+                            <DropdownMenu
+                                name="Tags"
+                                items={tags.map((tag) => ({
+                                    title: tag,
+                                    url: `/blog/tag/${tag}`,
+                                }))}
+                            />
+                            {/* <div className="btn-group">
                                 <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                     Archives <span className="caret"></span>
                                 </button>
                                 <ul className="dropdown-menu" role="menu">
-                                    <li>Testing</li>
+                                    {years.map((year) => (
+                                        <li key={year}>
+                                            <Link href={`/blog/${year}`}>{year}</Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                             <div className="btn-group">
@@ -33,9 +52,13 @@ export default function BlogIndex({ posts, previousPage, nextPage }) {
                                     Tags <span className="caret"></span>
                                 </button>
                                 <ul className="dropdown-menu" role="menu">
-                                    <li>Testing</li>
+                                    {tags.slice(0, 10).map((tag) => (
+                                        <li key={tag}>
+                                            <Link href={`/blog/tag/${tag}`}>{tag}</Link>
+                                        </li>
+                                    ))}
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

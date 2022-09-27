@@ -33,17 +33,35 @@
         }
     }
 
+    // .dropdown-toggle:focus + .dropdown-menu,
+    // .dropdown-menu:focus-within {
+    //     opacity: 1;
+    //     visibility: visible;
+    // }
+
     .dropdown-menu {
+        display: block;
+        max-height: 400px;
+        overflow: auto;
         border: 2px solid $red;
         background-color: $light-red;
         box-shadow: none;
+        opacity: 0;
+        visibility: hidden;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
 
         a {
             color: $white;
             text-transform: uppercase;
             font-weight: $bold;
 
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus {
                 background-color: $red;
             }
         }

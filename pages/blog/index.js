@@ -1,4 +1,4 @@
-import { getPaginatedPosts } from "@/lib/blog";
+import { getBlogProps, getPaginatedPosts } from "@/lib/blog";
 import BlogIndex from "@/components/blog-index";
 
 export default function Blog(props) {
@@ -6,12 +6,10 @@ export default function Blog(props) {
 }
 
 export async function getStaticProps() {
-    const posts = await getPaginatedPosts();
+    let props = await getBlogProps();
 
-    return {
-        props: {
-            posts,
-            nextPage: 2,
-        },
-    };
+    props.posts = await getPaginatedPosts();
+    props.nextPage = 2;
+
+    return { props };
 }

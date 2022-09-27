@@ -1,4 +1,4 @@
-import { searchPosts } from "@/lib/blog";
+import { getBlogProps, searchPosts } from "@/lib/blog";
 import BlogIndex from "@/components/blog-index";
 
 export default function BlogSearch(props) {
@@ -6,11 +6,8 @@ export default function BlogSearch(props) {
 }
 
 export async function getServerSideProps({ params }) {
-    const posts = await searchPosts(params.query);
+    let props = await getBlogProps();
+    props.posts = await searchPosts(params.query);
 
-    return {
-        props: {
-            posts,
-        },
-    };
+    return { props };
 }

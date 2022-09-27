@@ -1,4 +1,4 @@
-import { getPostTagPaths, getTaggedPosts } from "@/lib/blog";
+import { getBlogProps, getPostTagPaths, getTaggedPosts } from "@/lib/blog";
 import BlogIndex from "@/components/blog-index";
 
 export default function BlogSearch(props) {
@@ -15,11 +15,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const posts = await getTaggedPosts(params.tag);
+    let props = await getBlogProps();
+    props.posts = await getTaggedPosts(params.tag);
 
-    return {
-        props: {
-            posts,
-        },
-    };
+    return { props };
 }
