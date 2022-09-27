@@ -1,17 +1,20 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 import ChevronRight from "@/icons/chevron-right.svg";
 
-import html5 from "@/images/logos/html5.png";
-import css3 from "@/images/logos/css3.png";
-import wordpress from "@/images/logos/wordpress.png";
-import drupal from "@/images/logos/drupal.png";
-import python from "@/images/logos/python.png";
-import django from "@/images/logos/django.png";
-import php from "@/images/logos/php.png";
+import html5 from "@/images/logos/html5.svg";
+import css3 from "@/images/logos/css3.svg";
+import wordpress from "@/images/logos/wordpress.svg";
+import drupal from "@/images/logos/drupal.svg";
+import python from "@/images/logos/python.svg";
+import django from "@/images/logos/django.svg";
+import php from "@/images/logos/php.svg";
 
 export default function Services() {
+    console.log(wordpress);
+
     return (
         <div className="services">
             <Head>
@@ -26,20 +29,24 @@ export default function Services() {
                             <p>Your audience is increasingly going mobile. Make sure you are putting your best foot forward in all situations.</p>
                             <ul>
                                 <li>
-                                    <a href="http://www.w3.org/TR/html5/">
-                                        <img alt="HTML5" src={html5.src} />
+                                    <a href="http://www.w3.org/TR/html5/" target="_blank" rel="noopener noreferrer">
+                                        <Image alt="HTML5" src={html5.src} width={(html5.width / html5.height) * 60} height={60} />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="http://www.w3.org/Style/CSS/">
-                                        <img alt="CSS3" src={css3.src} />
+                                    <a href="http://www.w3.org/Style/CSS/" target="_blank" rel="noopener noreferrer">
+                                        <Image alt="CSS3" src={css3.src} width={(css3.width / css3.height) * 60} height={60} />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="http://getbootstrap.com/">Bootstrap</a>
+                                    <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
+                                        Bootstrap
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="http://foundation.zurb.com/">Foundation</a>
+                                    <a href="https://get.foundation/" target="_blank" rel="noopener noreferrer">
+                                        Foundation
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -56,13 +63,13 @@ export default function Services() {
                             <p>We build themes and plugins with extensibility and maintainabilty in mind, ensuring that your project will be flexible and powerful enough serve your business well into the future.</p>
                             <ul>
                                 <li>
-                                    <a href="http://wordpress.org/">
-                                        <img alt="WordPress" src={wordpress.src} />
+                                    <a href="https://wordpress.org/" target="_blank" rel="noopener noreferrer">
+                                        <Image alt="WordPress" src={wordpress.src} width={(wordpress.width / wordpress.height) * 40} height={40} />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://drupal.org/">
-                                        <img alt="Drupal" src={drupal.src} />
+                                    <a href="https://www.drupal.org/" target="_blank" rel="noopener noreferrer">
+                                        <Image alt="Drupal" src={drupal.src} width={(drupal.width / drupal.height) * 34} height={34} />
                                     </a>
                                 </li>
                             </ul>
@@ -80,18 +87,18 @@ export default function Services() {
                             <p>From location-based search APIs to web-based tools for data management and anaylsis, I have experience building software solutions for startups, publicly-traded companies, and government agencies alike.</p>
                             <ul>
                                 <li>
-                                    <a href="http://www.python.org/">
-                                        <img alt="Python" src={python.src} />
+                                    <a className="mt-5" href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
+                                        <Image alt="Python" src={python.src} width={(python.width / python.height) * 50} height={50} />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.djangoproject.com/">
-                                        <img alt="Django" src={django.src} />
+                                    <a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer">
+                                        <Image alt="Django" src={django.src} width={(django.width / django.height) * 40} height={40} />
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="http://php.net/">
-                                        <img alt="PHP" src={php.src} />
+                                    <a href="https://www.php.net/" target="_blank" rel="noopener noreferrer">
+                                        <Image alt="PHP" src={php.src} width={(php.width / php.height) * 45} height={45} />
                                     </a>
                                 </li>
                             </ul>
