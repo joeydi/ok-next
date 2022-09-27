@@ -35,30 +35,6 @@ export default function BlogIndex({ posts, previousPage, nextPage, years, tags }
                                     url: `/blog/tag/${tag}`,
                                 }))}
                             />
-                            {/* <div className="btn-group">
-                                <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    Archives <span className="caret"></span>
-                                </button>
-                                <ul className="dropdown-menu" role="menu">
-                                    {years.map((year) => (
-                                        <li key={year}>
-                                            <Link href={`/blog/${year}`}>{year}</Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="btn-group">
-                                <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    Tags <span className="caret"></span>
-                                </button>
-                                <ul className="dropdown-menu" role="menu">
-                                    {tags.slice(0, 10).map((tag) => (
-                                        <li key={tag}>
-                                            <Link href={`/blog/tag/${tag}`}>{tag}</Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div> */}
                         </div>
                     </div>
                 </div>
