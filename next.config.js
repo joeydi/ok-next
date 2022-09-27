@@ -10,7 +10,8 @@ const nextConfig = {
             test: /\.svg$/i,
             issuer: /\.[jt]sx?$/,
             resource: { not: /icons/ },
-            use: [{ loader: "@svgr/webpack", options: { icon: false } }],
+            loader: "next-image-loader",
+            options: { basePath: "", assetPrefix: "" },
         });
 
         config.module.rules.push({
