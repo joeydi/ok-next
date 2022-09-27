@@ -17,14 +17,13 @@ h6,
     }
 }
 
-a,
-a:visited {
+a {
     text-decoration: none;
     color: $red;
-}
 
-a:hover {
-    color: darken($red, 10%);
+    &:hover {
+        color: darken($red, 10%);
+    }
 }
 
 .btn {
