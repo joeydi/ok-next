@@ -13,8 +13,6 @@ import django from "@/images/logos/django.svg";
 import php from "@/images/logos/php.svg";
 
 export default function Services() {
-    console.log(wordpress);
-
     return (
         <div className="services">
             <Head>

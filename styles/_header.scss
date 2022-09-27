@@ -8,17 +8,9 @@ header {
     }
 }
 
-#logo {
+.logo {
     display: block;
-
-    @include respond-to(tablet) {
-        margin-bottom: 0;
-        text-align: left;
-    }
-
-    img {
-        height: 30px;
-    }
+    line-height: 0;
 }
 
 #menu-trigger {
@@ -109,8 +101,7 @@ html.js.csstransforms nav {
             border-bottom: none;
         }
 
-        a,
-        a:visited {
+        a {
             display: block;
             padding: 5px 15px;
             text-transform: uppercase;
@@ -134,9 +125,9 @@ html.js.csstransforms nav {
             line-height: 30px;
             display: inline-block;
             padding: 0 20px;
+            border: none;
 
-            a,
-            a:visited {
+            a {
                 padding: 0;
                 font-size: 20px;
             }
