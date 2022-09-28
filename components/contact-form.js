@@ -39,8 +39,10 @@ export default function ContactForm() {
     return (
         <form role="form" method="post" onSubmit={sendMail} ref={ref}>
             {status && (
-                <p>
-                    <strong>Thanks for contacting us! We&rsquo;ll get back to you shortly.</strong>
+                <p className="h4 mb-15">
+                    Thanks for contacting us!
+                    <br />
+                    We&rsquo;ll get back to you shortly.
                 </p>
             )}
             <div className="form-group mb-15">
