@@ -5,12 +5,19 @@ import Image from "next/image";
 import ChevronRight from "@/icons/chevron-right.svg";
 
 import html5 from "@/images/logos/html5.svg";
+import html5Size from "@/images/logos/html5.svg?size";
 import css3 from "@/images/logos/css3.svg";
+import css3Size from "@/images/logos/css3.svg?size";
 import wordpress from "@/images/logos/wordpress.svg";
+import wordpressSize from "@/images/logos/wordpress.svg?size";
 import drupal from "@/images/logos/drupal.svg";
+import drupalSize from "@/images/logos/drupal.svg?size";
 import python from "@/images/logos/python.svg";
+import pythonSize from "@/images/logos/python.svg?size";
 import django from "@/images/logos/django.svg";
+import djangoSize from "@/images/logos/django.svg?size";
 import php from "@/images/logos/php.svg";
+import phpSize from "@/images/logos/php.svg?size";
 
 export default function Services() {
     return (
@@ -28,12 +35,12 @@ export default function Services() {
                             <ul>
                                 <li>
                                     <a href="http://www.w3.org/TR/html5/" target="_blank" rel="noopener noreferrer">
-                                        <Image alt="HTML5" src={html5.src} width={(html5.width / html5.height) * 60} height={60} />
+                                        <Image alt="HTML5" src={html5} width={(html5Size.width / html5Size.height) * 60} height={60} />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="http://www.w3.org/Style/CSS/" target="_blank" rel="noopener noreferrer">
-                                        <Image alt="CSS3" src={css3.src} width={(css3.width / css3.height) * 60} height={60} />
+                                        <Image alt="CSS3" src={css3} width={(css3Size.width / css3Size.height) * 60} height={60} />
                                     </a>
                                 </li>
                                 <li>
@@ -62,12 +69,12 @@ export default function Services() {
                             <ul>
                                 <li>
                                     <a href="https://wordpress.org/" target="_blank" rel="noopener noreferrer">
-                                        <Image alt="WordPress" src={wordpress.src} width={(wordpress.width / wordpress.height) * 40} height={40} />
+                                        <Image alt="WordPress" src={wordpress} width={(wordpressSize.width / wordpressSize.height) * 40} height={40} />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.drupal.org/" target="_blank" rel="noopener noreferrer">
-                                        <Image alt="Drupal" src={drupal.src} width={(drupal.width / drupal.height) * 34} height={34} />
+                                        <Image alt="Drupal" src={drupal} width={(drupalSize.width / drupalSize.height) * 34} height={34} />
                                     </a>
                                 </li>
                             </ul>
@@ -86,17 +93,17 @@ export default function Services() {
                             <ul>
                                 <li>
                                     <a className="mt-5" href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
-                                        <Image alt="Python" src={python.src} width={(python.width / python.height) * 50} height={50} />
+                                        <Image alt="Python" src={python} width={(pythonSize.width / pythonSize.height) * 50} height={50} />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer">
-                                        <Image alt="Django" src={django.src} width={(django.width / django.height) * 40} height={40} />
+                                        <Image alt="Django" src={django} width={(djangoSize.width / djangoSize.height) * 40} height={40} />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://www.php.net/" target="_blank" rel="noopener noreferrer">
-                                        <Image alt="PHP" src={php.src} width={(php.width / php.height) * 45} height={45} />
+                                        <Image alt="PHP" src={php} width={(phpSize.width / phpSize.height) * 45} height={45} />
                                     </a>
                                 </li>
                             </ul>

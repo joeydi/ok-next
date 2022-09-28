@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import logo from "@/images/logo.svg";
+import logoSize from "@/images/logo.svg?size";
 import Hamburger from "@/icons/hamburger.svg";
 
 export default function Header() {
@@ -23,7 +24,7 @@ export default function Header() {
                     <div className="col-6 col-md-3">
                         <Link href="/">
                             <a title="Okay Plus logo" className="logo">
-                                <Image alt="WordPress" src={logo.src} width={(logo.width / logo.height) * 30} height={30} />
+                                <Image alt="WordPress" src={logo} width={(logoSize.width / logoSize.height) * 30} height={30} />
                             </a>
                         </Link>
                     </div>

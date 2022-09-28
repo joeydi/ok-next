@@ -9,9 +9,16 @@ const nextConfig = {
         config.module.rules.push({
             test: /\.svg$/i,
             issuer: /\.[jt]sx?$/,
+            resourceQuery: /size/,
+            loader: "img-size-loader",
+        });
+
+        config.module.rules.push({
+            test: /\.svg$/i,
+            issuer: /\.[jt]sx?$/,
             resource: { not: /icons/ },
-            loader: "next-image-loader",
-            options: { basePath: "", assetPrefix: "" },
+            resourceQuery: { not: /size/ },
+            type: "asset",
         });
 
         config.module.rules.push({
