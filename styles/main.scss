@@ -48,6 +48,12 @@ body {
     }
 }
 
+:focus-visible,
+.btn:focus-visible {
+    outline: none;
+    box-shadow: $input-focus-box-shadow;
+}
+
 #hero {
     padding: 30px 0;
     background: $red;
