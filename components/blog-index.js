@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 
 import DropdownMenu from "@/components/dropdown-menu";
@@ -11,9 +10,6 @@ import ChevronRight from "@/icons/chevron-right.svg";
 export default function BlogIndex({ posts, previousPage, nextPage, years, tags }) {
     return (
         <div className="blog">
-            <Head>
-                <title key="title">Blog - Okay Plus</title>
-            </Head>
             <div id="hero">
                 <div className="container">
                     <div className="row">

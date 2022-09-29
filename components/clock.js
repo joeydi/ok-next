@@ -24,9 +24,9 @@ export default function Clock() {
 
     return (
         <div className="clock-container">
-            <img src={clockOutline.src} alt="" />
-            <img src={clockMinuteHand.src} alt="" ref={clockMinuteHandRef} />
-            <img src={clockHourHand.src} alt="" ref={clockHourHandRef} />
+            <img src={clockOutline} alt="" />
+            <img src={clockMinuteHand} alt="" ref={clockMinuteHandRef} />
+            <img src={clockHourHand} alt="" ref={clockHourHandRef} />
         </div>
     );
 }

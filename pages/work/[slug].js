@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import { MDXRemote } from "next-mdx-remote";
 import Link from "next/link";
 import Image from "next/image";
+import { NextSeo } from "next-seo";
 import { useInView } from "react-intersection-observer";
 import { getProjectPaths, getProjectData } from "@/lib/work";
 
@@ -17,6 +18,7 @@ const Project = ({ project, next, previous }) => {
 
     return (
         <div className="project">
+            <NextSeo title={`${project.frontmatter.title}`} />
             <div id="hero">
                 <div className="container">
                     <div className="row">

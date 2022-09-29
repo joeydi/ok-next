@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import { NextSeo } from "next-seo";
 import Paper from "paper";
 
 let speed = 0.125,
@@ -217,6 +218,7 @@ export default function NetworkPage() {
 
     return (
         <div id="network">
+            <NextSeo title="Network" description="Do stuff. Be clenched, curious. Not waiting for inspiration&rsquo;s shove or society&rsquo;s kiss on your forehead. Pay attention. It&rsquo;s all about paying attention. Attention is vitality. It connects you with others. It makes you eager. Stay eager." />
             <div className="overlay">
                 <div className="container">
                     <div className="row">

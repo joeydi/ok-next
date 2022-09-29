@@ -1,15 +1,13 @@
 import Link from "next/link";
-import Head from "next/head";
 import Image from "next/image";
+import { NextSeo } from "next-seo";
 
 import { getProjects } from "@/lib/work";
 
 export default function Work({ projects }) {
     return (
         <div className="work">
-            <Head>
-                <title key="title">Web Design &amp; Development Portfolio - Okay Plus</title>
-            </Head>
+            <NextSeo title="Work Archive" />
             <div id="hero">
                 <div className="container">
                     <div className="row">
@@ -21,7 +19,6 @@ export default function Work({ projects }) {
                     </div>
                 </div>
             </div>
-
             <div id="content">
                 <div className="container">
                     <div className="row">

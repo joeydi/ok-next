@@ -1,6 +1,6 @@
-import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { NextSeo } from "next-seo";
 
 import ChevronRight from "@/icons/chevron-right.svg";
 
@@ -22,9 +22,7 @@ import phpSize from "@/images/logos/php.svg?size";
 export default function Services() {
     return (
         <div className="services">
-            <Head>
-                <title key="title">Web Design &amp; Development Services - Okay Plus</title>
-            </Head>
+            <NextSeo title="Web Design &amp; Development Services" />
             <div id="rwd" className="service">
                 <div className="container">
                     <div className="row">

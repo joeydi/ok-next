@@ -1,14 +1,12 @@
 import sample from "underscore/modules/sample.js";
 import random from "underscore/modules/random.js";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import data from "./data.json";
 
 export default function TwitterBio({ bio }) {
     return (
         <div className="blog">
-            <Head>
-                <title key="title">Blog - Okay Plus</title>
-            </Head>
+            <NextSeo title="Your New Twitter Bio" />
             <div id="hero">
                 <div className="container">
                     <div className="row">
