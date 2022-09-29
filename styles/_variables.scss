@@ -49,3 +49,5 @@ $grid-gutter-width: 30px;
 $container-max-widths: (
     xxl: 1260px,
 );
+
+$input-focus-box-shadow: 0 0 0 3px transparentize($black, 0.75);

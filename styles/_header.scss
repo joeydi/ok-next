@@ -41,6 +41,7 @@ nav {
     }
 
     @include respond-to(tablet) {
+        overflow: visible;
         max-height: none;
         margin-top: 0;
         margin-bottom: 0;
