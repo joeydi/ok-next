@@ -1,10 +1,12 @@
 import Head from "next/head";
+import Image from "next/image";
 import ContactForm from "@/components/contact-form";
 
 import headshot from "@/images/headshot.jpg";
 import Save from "@/icons/save.svg";
 
 export default function Contact() {
+    console.log(headshot);
     return (
         <div className="contact">
             <Head>
@@ -14,7 +16,9 @@ export default function Contact() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 col-lg-5 offset-lg-1">
-                            <img className="headshot" src={headshot.src} />
+                            <div className="headshot">
+                                <Image placeholder="blur" {...headshot} />
+                            </div>
                         </div>
                         <div className="col-md-6">
                             <div className="card">
