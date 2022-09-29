@@ -63,13 +63,12 @@
 }
 
 .headshot {
-    // display: inline-block;
     max-width: 300px;
+    margin: 0 auto -30px;
     border: 6px solid $white;
     border-radius: 100%;
     overflow: hidden;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
-    margin-bottom: -30px;
 
     @include respond-to(tablet) {
         max-width: 340px;
@@ -129,6 +128,7 @@
     .footer a {
         display: flex;
         align-items: center;
+        justify-content: center;
         padding: 15px;
         font-size: 14px;
         font-weight: $bold;
@@ -142,6 +142,7 @@
         }
 
         @include respond-to(tablet) {
+            justify-content: flex-start;
             padding-left: 120px;
         }
     }

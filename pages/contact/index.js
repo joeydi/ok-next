@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import { NextSeo } from "next-seo";
 import ContactForm from "@/components/contact-form";
 
@@ -6,7 +6,6 @@ import headshot from "@/images/headshot.jpg";
 import Save from "@/icons/save.svg";
 
 export default function Contact() {
-    console.log(headshot);
     return (
         <div className="contact">
             <NextSeo title="Contact Joe di Stefano at Okay Plus" description="Phone: 480.459.6720, Email: joeydi@okaypl.us" />
@@ -15,7 +14,7 @@ export default function Contact() {
                     <div className="row">
                         <div className="col-md-6 col-lg-5 offset-lg-1">
                             <div className="headshot">
-                                <Image placeholder="blur" {...headshot} />
+                                <Image placeholder="blur" {...headshot} alt="Photo of Joe di Stefano" />
                             </div>
                         </div>
                         <div className="col-md-6">

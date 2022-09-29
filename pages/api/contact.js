@@ -2,7 +2,7 @@ import mail from "@sendgrid/mail";
 
 mail.setApiKey(process.env.EMAIL_API_KEY);
 
-export default async (req, res) => {
+export default async function Contact(req, res) {
     const { name, email, message } = req.body;
 
     const msg = {
@@ -26,4 +26,4 @@ Message: ${message}
             message: error.message,
         });
     }
-};
+}

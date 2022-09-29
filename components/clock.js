@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import Image from "next/future/image";
 
 import clockOutline from "@/images/clock-outline.svg";
 import clockMinuteHand from "@/images/clock-minute-hand.svg";
@@ -24,9 +25,9 @@ export default function Clock() {
 
     return (
         <div className="clock-container">
-            <img src={clockOutline} alt="" />
-            <img src={clockMinuteHand} alt="" ref={clockMinuteHandRef} />
-            <img src={clockHourHand} alt="" ref={clockHourHandRef} />
+            <Image src={clockOutline} width="40" height="40" alt="" />
+            <Image src={clockMinuteHand} width="40" height="40" alt="" ref={clockMinuteHandRef} />
+            <Image src={clockHourHand} width="40" height="40" alt="" ref={clockHourHandRef} />
         </div>
     );
 }

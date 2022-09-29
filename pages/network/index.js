@@ -207,12 +207,10 @@ const distance = function (x1, y1, x2, y2) {
 };
 
 export default function NetworkPage() {
-    let network;
-
     const canvasRef = useRef();
 
     useEffect(() => {
-        network = new Network();
+        const network = new Network();
         network.init(canvasRef.current);
     }, []);
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/future/image";
 
 import ChevronRight from "@/icons/chevron-right.svg";
 
@@ -85,7 +86,7 @@ export default function Home() {
                             </Link>
                         </div>
                         <div className="col-lg-7">
-                            <img id="phone" src={phone.src} alt="" />
+                            <Image id="phone" {...phone} alt="Mobile device showing custom website design." />
                         </div>
                     </div>
                 </div>
