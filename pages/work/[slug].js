@@ -18,7 +18,12 @@ const Project = ({ project, next, previous }) => {
 
     return (
         <div className="project">
-            <NextSeo title={`${project.frontmatter.title}`} />
+            <NextSeo
+                title={`${project.frontmatter.title}`}
+                openGraph={{
+                    images: [{ url: project.frontmatter.featuredImage.src, alt: project.frontmatter.featuredImage.alt }],
+                }}
+            />
             <div id="hero">
                 <div className="container">
                     <div className="row">
