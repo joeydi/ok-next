@@ -1,13 +1,18 @@
 import "@/styles/main.scss";
 
+import Head from "next/head";
 import { DefaultSeo } from "next-seo";
 import Layout from "@/components/layout";
 
+import favicon from "@/images/favicon.png";
 import social from "@/images/okay-plus-social.png";
 
 export default function MyApp({ Component, pageProps }) {
     return (
         <Layout>
+            <Head>
+                <link rel="shortcut icon" type="image/x-icon" href={favicon.src} />
+            </Head>
             <DefaultSeo
                 type="website"
                 url="https://okaypl.us/"
