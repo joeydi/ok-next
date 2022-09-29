@@ -1,18 +1,13 @@
 import "@/styles/main.scss";
 
-import Head from "next/head";
 import { DefaultSeo } from "next-seo";
 import Layout from "@/components/layout";
-import favicon from "@/images/favicon.png";
 
 import social from "@/images/okay-plus-social.png";
 
 export default function MyApp({ Component, pageProps }) {
     return (
         <Layout>
-            <Head>
-                <link rel="shortcut icon" type="image/x-icon" href={favicon.src} />
-            </Head>
             <DefaultSeo
                 type="website"
                 url="https://okaypl.us/"
@@ -24,7 +19,7 @@ export default function MyApp({ Component, pageProps }) {
                     locale: "en_IE",
                     url: "https://okaypl.us/",
                     site_name: "Okay Plus",
-                    images: [{ url: social.src }],
+                    images: [{ url: social.src, alt: "Okay Plus logo with mobile device in foreground showing custom website design." }],
                 }}
                 twitter={{
                     handle: "@joeydi",
