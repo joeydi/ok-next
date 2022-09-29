@@ -1,7 +1,7 @@
 header {
     padding: 20px 0;
     background: $red;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid $light-red;
 
     @include respond-to(tablet) {
         padding: 35px 0;
@@ -30,8 +30,7 @@ header {
 
 nav {
     max-height: 0;
-    margin-top: 20px;
-    margin-bottom: -20px;
+    margin: 20px -5vw -20px;
     background-color: $light-red;
     overflow: hidden;
     transition: max-height 0.25s;
@@ -43,8 +42,7 @@ nav {
     @include respond-to(tablet) {
         overflow: visible;
         max-height: none;
-        margin-top: 0;
-        margin-bottom: 0;
+        margin: 0;
         background-color: transparent;
     }
 }
@@ -104,7 +102,7 @@ html.js.csstransforms nav {
 
         a {
             display: block;
-            padding: 5px 15px;
+            padding: 5px 5vw;
             text-transform: uppercase;
             font-weight: $bold;
             color: $white;
