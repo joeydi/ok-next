@@ -21,7 +21,8 @@
         "react-dom": "18.2.0",
         "react-intersection-observer": "^9.4.0",
         "react-markdown": "^8.0.3",
-        "sass": "^1.54.8"
+        "sass": "^1.54.8",
+        "underscore": "^1.13.6"
     },
     "devDependencies": {
         "@svgr/webpack": "^6.3.1",

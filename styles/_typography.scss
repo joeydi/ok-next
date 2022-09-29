@@ -36,7 +36,9 @@ a {
 
 hr {
     width: 50%;
-    border-top: 4px solid darken($light-grey, 3%);
+    margin: 20px auto;
+    border-top: 4px solid $light-grey;
+    opacity: 1;
 }
 
 svg.icon {

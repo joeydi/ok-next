@@ -1,5 +1,5 @@
 {
-    "real_jobs": [
+    "realJobs": [
         "Able Seaman",
         "Abrasive Grader",
         "Abrasive Grinder",
@@ -1835,7 +1835,7 @@
         "Zoo Veterinarian",
         "Zoologist"
     ],
-    "aspirational_jobs": [
+    "aspirationalJobs": [
         "Agency Account Coordinator",
         "Agency Account Executive",
         "Agency Account Planner",
@@ -1962,7 +1962,7 @@
         "iPhone Developer",
         "Silverlight Developer"
     ],
-    "whackadoodle_hobbies": [
+    "whackadoodleHobbies": [
         "Aikido Instructor",
         "Antique Specialist",
         "Art Collecter",
@@ -2069,7 +2069,7 @@
         "Woodworker",
         "Writer"
     ],
-    "family_titles": [
+    "familyTitles": [
         "Father",
         "Brother",
         "Mother",
@@ -2082,7 +2082,7 @@
         "Half Brother",
         "Red-headed Stepchild"
     ],
-    "tech_gerunds": [
+    "techGerunds": [
         "Programming",
         "Building startups",
         "Achieving",
@@ -2094,13 +2094,12 @@
         "Taming big data",
         "Dot-bombing",
         "Mindsharing",
-        "Paradigm shift",
+        "Paradigm shifting",
         "Increasing bandwidth",
         "Assualting eyeballs",
         "Syncing-up",
         "Gamifying",
         "Pivoting",
-        "Your freemen",
         "Co-opting",
         "Curating",
         "Connecting",
