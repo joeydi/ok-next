@@ -75,8 +75,8 @@
     }
 }
 
-.testimonials {
-    perspective: 10000px;
+.testimonial-wrap {
+    perspective: 200vw;
 }
 
 .testimonial {
@@ -84,16 +84,17 @@
     z-index: 1;
     margin-bottom: 3em;
     transition: all 1s;
-    transform: rotateX(10deg) rotateY(90deg);
-    transform-origin: 110% top;
+    transform: rotateX(-90deg) rotateY(45deg);
+    transform-origin: 50% top;
+    opacity: 0;
 
-    &:nth-child(even) {
-        transform: rotateX(10deg) rotateY(-90deg);
-        transform-origin: -10% top;
+    .testimonial-wrap:nth-child(even) & {
+        transform: rotateX(-90deg) rotateY(-45deg);
     }
 
     &.active {
-        transform: rotateX(0deg) rotateY(0deg);
+        transform: rotateX(0deg) rotateY(0deg) !important;
+        opacity: 1;
     }
 
     &:before {
@@ -113,8 +114,13 @@
     @include respond-to(tablet) {
         width: 90%;
         margin: 0 auto 3em;
+        transform: rotateX(0) rotateY(90deg);
+        transform-origin: 110% top;
 
-        &:nth-child(even) {
+        .testimonial-wrap:nth-child(even) & {
+            transform: rotateX(0) rotateY(-90deg);
+            transform-origin: -10% top;
+
             cite {
                 padding: 5px 185px 5px 1.5em;
 
@@ -136,7 +142,7 @@
         width: 45%;
         margin: 0;
 
-        &:nth-child(even) {
+        .testimonial-wrap:nth-child(even) & {
             float: right;
 
             &:before {
@@ -158,19 +164,19 @@
             margin-right: 0;
         }
 
-        &:nth-child(1) {
+        .testimonial-wrap:nth-child(1) & {
             margin-top: 0;
         }
-        &:nth-child(2) {
+        .testimonial-wrap:nth-child(2) & {
             margin-top: -280px;
         }
-        &:nth-child(3) {
+        .testimonial-wrap:nth-child(3) & {
             margin-top: 80px;
         }
-        &:nth-child(4) {
+        .testimonial-wrap:nth-child(4) & {
             margin-top: -190px;
         }
-        &:nth-child(5) {
+        .testimonial-wrap:nth-child(5) & {
             margin-top: 80px;
         }
     }
@@ -180,19 +186,19 @@
             top: 22px;
         }
 
-        &:nth-child(1) {
+        .testimonial-wrap:nth-child(1) & {
             margin-top: 0;
         }
-        &:nth-child(2) {
+        .testimonial-wrap:nth-child(2) & {
             margin-top: -220px;
         }
-        &:nth-child(3) {
+        .testimonial-wrap:nth-child(3) & {
             margin-top: 80px;
         }
-        &:nth-child(4) {
+        .testimonial-wrap:nth-child(4) & {
             margin-top: -170px;
         }
-        &:nth-child(5) {
+        .testimonial-wrap:nth-child(5) & {
             margin-top: 80px;
         }
     }
