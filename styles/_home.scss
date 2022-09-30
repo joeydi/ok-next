@@ -331,10 +331,9 @@
         top: 50px;
     }
 
-    img {
+    > div {
         position: absolute;
         left: 0;
         top: 0;
-        transform: rotate(0deg);
     }
 }

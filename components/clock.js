@@ -25,9 +25,15 @@ export default function Clock() {
 
     return (
         <div className="clock-container">
-            <Image src={clockOutline} width="40" height="40" alt="" />
-            <Image src={clockMinuteHand} width="40" height="40" alt="" ref={clockMinuteHandRef} />
-            <Image src={clockHourHand} width="40" height="40" alt="" ref={clockHourHandRef} />
+            <div>
+                <Image src={clockOutline} width="40" height="40" alt="" />
+            </div>
+            <div ref={clockMinuteHandRef}>
+                <Image src={clockMinuteHand} width="40" height="40" alt="" />
+            </div>
+            <div ref={clockHourHandRef}>
+                <Image src={clockHourHand} width="40" height="40" alt="" />
+            </div>
         </div>
     );
 }
