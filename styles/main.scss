@@ -31,11 +31,12 @@ body {
 }
 
 body {
-    font-family: "effra", sans-serif;
-    font-size: 18px;
-    -webkit-font-smoothing: antialiased;
     background-color: $light-grey;
     color: $black;
+
+    @include md {
+        font-size: 18px;
+    }
 }
 
 .container {
