@@ -34,7 +34,7 @@ export default function Header() {
                             <span className="visually-hidden">{navActive ? "Hide Menu" : "Show Menu"}</span>
                         </button>
                     </div>
-                    <div className="col-12 col-md-9 px-0 px-md-15">
+                    <div className="col-12 col-md-9">
                         <nav className={navActive ? "active" : ""}>
                             <ul id="menu">
                                 <li>
