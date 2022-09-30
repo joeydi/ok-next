@@ -83,7 +83,7 @@
     position: relative;
     z-index: 1;
     margin-bottom: 3em;
-    transition: all 1s;
+    transition: transform 1s, opacity 1s;
     transform: rotateX(-90deg) rotateY(45deg);
     transform-origin: 50% top;
     opacity: 0;

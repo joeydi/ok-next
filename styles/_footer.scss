@@ -14,11 +14,10 @@ footer {
     #social {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
 
         a {
             display: block;
-            margin-left: 8px;
+            margin-right: 8px;
             padding: 0;
             text-decoration: none;
         }
@@ -47,6 +46,17 @@ footer {
 
         @include respond-to(desktop) {
             letter-spacing: 0;
+        }
+    }
+
+    @include md {
+        #social {
+            justify-content: flex-end;
+
+            a {
+                margin-left: 8px;
+                margin-right: 8px;
+            }
         }
     }
 }

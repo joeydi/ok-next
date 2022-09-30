@@ -12,7 +12,7 @@ export default function Contact() {
             <div id="hero">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-6 col-lg-5 offset-lg-1">
+                        <div className="col-md-6">
                             <div className="headshot">
                                 <Image placeholder="blur" {...headshot} alt="Photo of Joe di Stefano" />
                             </div>
