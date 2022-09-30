@@ -86,7 +86,7 @@ export default function Home() {
                             </Link>
                         </div>
                         <div className="col-lg-7">
-                            <Image id="phone" {...phone} alt="Mobile device showing custom website design." />
+                            <Image priority="true" id="phone" {...phone} alt="Mobile device showing custom website design." />
                         </div>
                     </div>
                 </div>
