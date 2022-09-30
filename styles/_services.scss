@@ -17,7 +17,7 @@
         margin: 0.5em;
         background: $white;
         border-radius: 5px;
-        transition: all 0.25s;
+        transition: background 0.25s, color 0.25s;
 
         @include respond-to(tablet) {
             margin: 1em;

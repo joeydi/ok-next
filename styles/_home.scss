@@ -291,25 +291,25 @@
     }
 
     h1 {
-        transition: all 0.25s;
+        transition: transform 0.25s, opacity 0.25s;
     }
 
     p {
-        transition: all 0.35s;
+        transition: transform 0.35s, opacity 0.35s;
     }
 
     a {
-        transition: all 0.5s;
+        transition: transform 0.5s, opacity 0.5s;
     }
 
     a:last-child {
-        transition: all 0.75s;
+        transition: transform 0.75s, opacity 0.75s;
     }
 
     img {
+        transition: transform 0.5s, opacity 0.5s;
         transform-origin: left bottom;
         transform: translateX(40px) translateY(0) rotate(3deg);
-        transition: all 0.5s;
         opacity: 1;
     }
 

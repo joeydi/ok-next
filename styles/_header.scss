@@ -58,19 +58,19 @@ html.js.csstransforms nav {
         }
 
         li:nth-child(1) a {
-            transition: all 0.5s;
+            transition: transform 0.5s, opacity 0.5s;
         }
 
         li:nth-child(2) a {
-            transition: all 0.65s;
+            transition: transform 0.65s, opacity 0.65s;
         }
 
         li:nth-child(3) a {
-            transition: all 0.8s;
+            transition: transform 0.8s, opacity 0.8s;
         }
 
         li:nth-child(4) a {
-            transition: all 0.95s;
+            transition: transform 0.95s, opacity 0.95s;
         }
     }
 
