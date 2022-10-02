@@ -2,12 +2,15 @@ import "@/styles/main.scss";
 
 import Head from "next/head";
 import { DefaultSeo } from "next-seo";
+import usePreserveScroll from "@/hooks/preserve-scroll";
 import Layout from "@/components/layout";
 
 import favicon from "@/images/favicon.png";
 import social from "@/images/okay-plus-social.png";
 
 export default function MyApp({ Component, pageProps }) {
+    usePreserveScroll();
+
     return (
         <Layout>
             <Head>
