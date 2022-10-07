@@ -1,15 +1,13 @@
 import sample from "underscore/modules/sample.js";
 import random from "underscore/modules/random.js";
-import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
+import useDefaultSeo from "@/hooks/default-seo";
 import data from "./data.json";
 
 export default function TwitterBio({ bio }) {
-    const router = useRouter();
-    const seo = {
+    const seo = useDefaultSeo({
         title: "Your New Twitter Bio",
-        canonical: `${process.env.BASE_URL}${router.asPath}`,
-    };
+    });
 
     return (
         <div className="blog">

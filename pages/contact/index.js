@@ -1,18 +1,16 @@
-import { useRouter } from "next/router";
 import Image from "next/future/image";
 import { NextSeo } from "next-seo";
+import useDefaultSeo from "@/hooks/default-seo";
 import ContactForm from "@/components/contact-form";
 
 import headshot from "@/images/headshot.jpg";
 import Save from "@/icons/save.svg";
 
 export default function Contact() {
-    const router = useRouter();
-    const seo = {
+    const seo = useDefaultSeo({
         title: "Contact Joe di Stefano at Okay Plus",
         description: "Phone: 480.459.6720, Email: joeydi@okaypl.us",
-        canonical: `${process.env.BASE_URL}${router.asPath}`,
-    };
+    });
 
     return (
         <div className="contact">

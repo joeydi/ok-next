@@ -1,17 +1,15 @@
-import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
+import useDefaultSeo from "@/hooks/default-seo";
 import { getPostPaths, getPostData } from "@/lib/blog";
 import Post from "@/components/post";
 
 export default function BlogPost({ post }) {
-    const router = useRouter();
-    const seo = {
+    const seo = useDefaultSeo({
         title: post.frontmatter.title,
-        canonical: `${process.env.BASE_URL}${router.asPath}`,
         openGraph: {
             images: post.frontmatter.featuredImage ? [{ url: post.frontmatter.featuredImage?.src, alt: post.frontmatter.featuredImage?.alt }] : null,
         },
-    };
+    });
 
     return (
         <div id="content">

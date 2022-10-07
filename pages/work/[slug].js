@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 import { MDXRemote } from "next-mdx-remote";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import { NextSeo } from "next-seo";
+import useDefaultSeo from "@/hooks/default-seo";
 import { useInView } from "react-intersection-observer";
 import { getProjectPaths, getProjectData } from "@/lib/work";
 
@@ -15,14 +15,12 @@ import ChevronRight from "@/icons/chevron-right.svg";
 const ProjectImages = dynamic(() => import("@/components/project-images"), { ssr: false });
 
 const Project = ({ project, next, previous }) => {
-    const router = useRouter();
-    const seo = {
+    const seo = useDefaultSeo({
         title: project.frontmatter.title,
-        canonical: `${process.env.BASE_URL}${router.asPath}`,
         openGraph: {
             images: [{ url: project.frontmatter.featuredImage.src, alt: project.frontmatter.featuredImage.alt }],
         },
-    };
+    });
 
     const { ref, inView } = useInView();
 

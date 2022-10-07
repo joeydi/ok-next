@@ -1,16 +1,14 @@
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import { NextSeo } from "next-seo";
+import useDefaultSeo from "@/hooks/default-seo";
 
 import { getProjects } from "@/lib/work";
 
 export default function Work({ projects }) {
-    const router = useRouter();
-    const seo = {
+    const seo = useDefaultSeo({
         title: "Work Archive",
-        canonical: `${process.env.BASE_URL}${router.asPath}`,
-    };
+    });
 
     return (
         <div className="work">

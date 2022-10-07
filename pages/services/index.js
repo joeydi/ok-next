@@ -1,7 +1,7 @@
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import { NextSeo } from "next-seo";
+import useDefaultSeo from "@/hooks/default-seo";
 
 import ChevronRight from "@/icons/chevron-right.svg";
 
@@ -21,11 +21,9 @@ import php from "@/images/logos/php.svg";
 import phpSize from "@/images/logos/php.svg?size";
 
 export default function Services() {
-    const router = useRouter();
-    const seo = {
+    const seo = useDefaultSeo({
         title: "Web Design & Development Services",
-        canonical: `${process.env.BASE_URL}${router.asPath}`,
-    };
+    });
 
     return (
         <div className="services">

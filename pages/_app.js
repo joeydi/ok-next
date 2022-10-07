@@ -25,7 +25,6 @@ export default function MyApp({ Component, pageProps }) {
                 openGraph={{
                     type: "website",
                     locale: "en_IE",
-                    url: "https://okaypl.us/",
                     site_name: "Okay Plus",
                     images: [{ url: social.src, alt: "Okay Plus logo with mobile device in foreground showing custom website design." }],
                 }}

@@ -1,14 +1,12 @@
-import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
+import useDefaultSeo from "@/hooks/default-seo";
 import { getBlogProps, getPostTagPaths, getTaggedPosts } from "@/lib/blog";
 import BlogIndex from "@/components/blog-index";
 
 export default function BlogSearch(props) {
-    const router = useRouter();
-    const seo = {
+    const seo = useDefaultSeo({
         title: `Blog Archive - ${props.tag}`,
-        canonical: `${process.env.BASE_URL}${router.asPath}`,
-    };
+    });
 
     return (
         <>
