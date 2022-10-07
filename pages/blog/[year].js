@@ -1,11 +1,18 @@
+import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import { getBlogProps, getPostYearPaths, getYearPosts } from "@/lib/blog";
 import BlogIndex from "@/components/blog-index";
 
 export default function BlogSearch(props) {
+    const router = useRouter();
+    const seo = {
+        title: `Blog Archive - ${props.year}`,
+        canonical: `${process.env.BASE_URL}${router.asPath}`,
+    };
+
     return (
         <>
-            <NextSeo title={`Blog Archive - ${props.year}`} />
+            <NextSeo {...seo} />
             <BlogIndex {...props} />
         </>
     );

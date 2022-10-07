@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import Paper from "paper";
 
@@ -207,6 +208,13 @@ const distance = function (x1, y1, x2, y2) {
 };
 
 export default function NetworkPage() {
+    const router = useRouter();
+    const seo = {
+        title: "Network",
+        description: "Do stuff. Be clenched, curious. Not waiting for inspiration&rsquo;s shove or society&rsquo;s kiss on your forehead. Pay attention. It&rsquo;s all about paying attention. Attention is vitality. It connects you with others. It makes you eager. Stay eager.",
+        canonical: `${process.env.BASE_URL}${router.asPath}`,
+    };
+
     const canvasRef = useRef();
 
     useEffect(() => {
@@ -216,7 +224,7 @@ export default function NetworkPage() {
 
     return (
         <div id="network">
-            <NextSeo title="Network" description="Do stuff. Be clenched, curious. Not waiting for inspiration&rsquo;s shove or society&rsquo;s kiss on your forehead. Pay attention. It&rsquo;s all about paying attention. Attention is vitality. It connects you with others. It makes you eager. Stay eager." />
+            <NextSeo {...seo} />
             <div className="overlay">
                 <div className="container">
                     <div className="row">

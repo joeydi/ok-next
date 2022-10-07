@@ -1,11 +1,18 @@
+import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import { getBlogProps, getPaginatedPosts } from "@/lib/blog";
 import BlogIndex from "@/components/blog-index";
 
 export default function Blog(props) {
+    const router = useRouter();
+    const seo = {
+        title: "Blog",
+        canonical: `${process.env.BASE_URL}${router.asPath}`,
+    };
+
     return (
         <>
-            <NextSeo title="Blog" />
+            <NextSeo {...seo} />
             <BlogIndex {...props} />
         </>
     );
