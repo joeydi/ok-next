@@ -12,7 +12,13 @@ export default function PostQuote({ post }) {
 
             <p className="quote-source">
                 &mdash;&nbsp;
-                {post.frontmatter.link ? <a href={post.frontmatter.link}>{post.frontmatter.title}</a> : post.frontmatter.title}
+                {post.frontmatter.link ? (
+                    <a href={post.frontmatter.link} target="_blank" rel="noopener noreferrer">
+                        {post.frontmatter.title}
+                    </a>
+                ) : (
+                    post.frontmatter.title
+                )}
             </p>
 
             <Link href={`/${post.slug}`}>
