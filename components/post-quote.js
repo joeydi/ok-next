@@ -10,16 +10,10 @@ export default function PostQuote({ post }) {
                 <MDXRemote {...post} />
             </blockquote>
 
-            <p className="quote-source">
+            <h1 className="quote-source">
                 &mdash;&nbsp;
-                {post.frontmatter.link ? (
-                    <a href={post.frontmatter.link} target="_blank" rel="noopener noreferrer">
-                        {post.frontmatter.title}
-                    </a>
-                ) : (
-                    post.frontmatter.title
-                )}
-            </p>
+                {post.frontmatter.link ? <a href={post.frontmatter.link}>{post.frontmatter.title}</a> : post.frontmatter.title}
+            </h1>
 
             <Link href={`/${post.slug}`}>
                 <a className="permalink">
