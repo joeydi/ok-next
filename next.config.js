@@ -37,13 +37,13 @@ const nextConfig = {
     },
     async redirects() {
         return [
-          {
-            source: '/assets/img/blog/:file*',
-            destination: 'https://simple-creature-website-assets.s3.amazonaws.com/okayplus/archive/:file*',
-            permanent: true,
-          },
-        ]
-      },
+            {
+                source: "/assets/img/blog/:file*",
+                destination: "https://simple-creature-website-assets.s3.amazonaws.com/okayplus/archive/:file*",
+                permanent: true,
+            },
+        ];
+    },
 };
 
 module.exports = nextConfig;
